@@ -1,1 +1,328 @@
-:root {}
+/* dvh ipv vh --> zorgt dat de zoekbalk in safari ni meegerekend wordt  */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: "Plantin";
+    src: url('~@/assets/fonts/PlantinMTPro-Regular.woff2') format('woff2');
+}
+
+:root {
+    --fs-xs: 15px;
+    --fs-s: 19px;
+    --fs-m: 25px;
+    --fs-l: 35px;
+    --fs-xl: 2.5rem;
+    --fs-xxl: 3.8rem;
+
+    --c-red: #A81C2F;
+    --c-beige: #EBDFD3;
+    --c-gold: #BB9D00;
+    --c-black: #333332;
+}
+
+body {
+    background-color: var(--c-beige);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 50rem;
+    margin-top: -0.5rem;
+}
+
+main {
+    margin: 1.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a::first-letter,
+p::first-letter,
+h1::first-letter {
+    color: var(--c-red);
+    font-size: var(--fs-l);
+    font-family: 'Dancing Script';
+    text-transform: uppercase;
+}
+
+.gold::first-letter,
+.gold {
+    color: var(--c-gold);
+    font-size: inherit;
+    font-family: 'Dancing Script';
+    text-transform: none;
+    font-size: var(--fs-m);
+}
+
+p {
+    font-family: "Plantin MT Pro";
+    color: var(--c-black);
+}
+
+a {
+    font-size: var(--fs-s);
+}
+
+/* -------------- buttons -------------- */
+.button {
+    background-color: var(--c-black);
+    color: var(--c-beige);
+    font-size: var(--fs-s);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+
+}
+
+.button:hover {
+    background-color: var(--c-red);
+}
+
+.button:focus {
+    background-color: var(--c-red);
+    outline: 3px solid var(--c-black);
+}
+
+/* --------------- Navigatie --------------- */
+header {
+    color: var(--c-black);
+    padding: 3rem 1rem;
+    background-image: url('/rand.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--c-beige);
+    border-radius: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    animation: slideIn 0.5s ease-in-out;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-black);
+    z-index: 1;
+}
+
+.nav-links.show {
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    gap: 15%;
+    font-size: var(--fs-m);
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--c-beige);
+    display: block;
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--c-beige);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.hamburger:focus {
+    outline: 2px solid var(--c-beige);
+    border-radius: 8px;
+    padding: 6px;
+    background-color: var(--c-black);
+}
+
+.nav-links a:focus {
+    outline: 2px solid var(--c-beige);
+    border-radius: 5px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ----------------- hero ----------------- */
+.hero {
+    display: grid;
+    grid-template-rows: 12% 1fr;
+    gap: 1rem;
+}
+
+.hero_image {
+    justify-self: end;
+    align-self: center;
+    width: 230px;
+    height: auto;
+    overflow: hidden;
+    animation: smooth-rotation 6s infinite;
+}
+
+.hero_image-url {
+    width: calc(100% * 2);
+    height: auto;
+}
+
+.hero_image:hover {
+    background-position: right center;
+}
+
+.hero_text_container {
+    position: relative;
+}
+
+.hero_toggle-1 {
+    opacity: 1;
+}
+
+.hero_toggle-2 {
+    display: none;
+    opacity: 0;
+}
+
+.hero_wie {
+    position: absolute;
+    top: 0%;
+    margin: 0;
+}
+
+.hero_image-url {
+    width: calc(100% * 2);
+    height: 100%;
+}
+
+.hero_button_container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+@keyframes smooth-rotation {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+/* ------------- martina ------------- */
+
+/* ---------------------- media queries ---------------------- */
+@media (min-width: 830px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+    }
+
+    .nav-links li {
+        border-bottom: none;
+    }
+
+    .nav-links li a {
+        padding: 10px 15px;
+    }
+
+}
+
+@media (min-width: 900px) {
+    .nav-links {
+        animation: none;
+    }
+
+    .hero_text_container {
+        max-width: 70%;
+    }
+
+    header {
+        color: var(--c-beige);
+        padding: 2rem 4rem;
+    }
+
+    .hero {
+        grid-template-columns: 50% 50%;
+        height: 100%;
+        grid-template-rows: 1fr;
+        margin-top: 5rem;
+    }
+
+    .hero_button_container {
+        flex-direction: row;
+    }
+
+    .hero_button_container {
+        gap: 2rem;
+    }
+}
