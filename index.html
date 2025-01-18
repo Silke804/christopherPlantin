@@ -6,6 +6,8 @@
   <link rel="icon" type="image/svg+xml" href="/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christoffel Plantijn</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -24,13 +26,19 @@
       </ul>
     </div>
   </header>
-
-
   <main>
     <section class="hero">
+      <div>
+        <div class="hero_image">
+          <img src="plantin.webp" alt="plantin" class="hero_image-url" />
+        </div>
+      </div>
+      <p class="gold hero_wie hero_wie-1 hero_toggle-1">Wie oh wie is hij?</p>
+      <p class="gold hero_wie hero_wie-2 hero_toggle-2">Mijn vader !</p>
       <div class="hero_text_container">
         <h1 id="hero_title1">De Stem van Plantijn</h1>
-        <p class="hero_text hero_text-1" id="hero_text1">Hij was een man zoals er maar weinigen zijn. Zijn naam
+        <p class="hero_text hero_text-1 hero_toggle-1" id="hero_text1">Hij was een man zoals er maar weinigen zijn. Zijn
+          naam
           weerklonk
           door heel
           Europa, maar wie hij écht was, blijft
@@ -42,7 +50,8 @@
           verhaal.
           Wilt u zijn wereld ontdekken? Bezoek het Plantin-Moretus Museum en zie met eigen ogen waar zijn nalatenschap
           begon.</p>
-        <p class="hero_text hero_text-2" id="hero_text2">Die man? Dat was mijn vader, Christophe Plantin. Een visionair
+        <p class=" hero_text hero_text-2 hero_toggle-2" id="hero_text2">Die man? Dat was mijn vader, Christophe Plantin.
+          Een visionair
           die boeken
           meer zag dan enkel woorden
           op
@@ -54,11 +63,16 @@
           deelde
           in
           zijn woorden en zijn liefde toonde in zijn werk.</p>
+        <div class="hero_button_container">
+          <button class="button">Koop hier je tickets</button>
+          <p>of</p>
+          <p class="gold">Scrol om te ontdekken</p>
+        </div>
       </div>
+
+      <img src="/Martina_Plantin.webp" alt="scroll" class="martina" />
     </section>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script type="module" src="/src/main.js"></script>
 </body>
 
