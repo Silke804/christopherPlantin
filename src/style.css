@@ -61,6 +61,7 @@ h1::first-letter {
 p {
     font-family: "Plantin MT Pro";
     color: var(--c-black);
+    font-size: var(--fs-xs);
 }
 
 a {
@@ -71,7 +72,7 @@ a {
 .button {
     background-color: var(--c-black);
     color: var(--c-beige);
-    font-size: var(--fs-s);
+    font-size: var(--fs-xs);
     padding: 12px 24px;
     border: none;
     border-radius: 30px;
@@ -79,7 +80,6 @@ a {
     width: fit-content;
     height: fit-content;
     justify-self: center;
-
 }
 
 .button:hover {
@@ -91,11 +91,16 @@ a {
     outline: 3px solid var(--c-black);
 }
 
+.nav_button {
+    background-color: var(--c-beige);
+    color: var(--c-black);
+}
+
 /* --------------- Navigatie --------------- */
 header {
     color: var(--c-black);
     padding: 3rem 1rem;
-    background-image: url('/rand.png');
+    background-image: url('/rand.webp');
     background-repeat: repeat-x;
     background-size: contain;
     background-position: center center;
@@ -130,7 +135,6 @@ header {
 .nav-links {
     list-style: none;
     animation: slideIn 0.5s ease-in-out;
-    margin: 0;
     padding: 0;
     display: none;
     flex-direction: column;
@@ -148,8 +152,7 @@ header {
 .nav-links.show {
     display: flex;
     opacity: 1;
-    justify-content: center;
-    gap: 15%;
+    justify-content: space-evenly;
     font-size: var(--fs-m);
 }
 
@@ -186,6 +189,12 @@ header {
 .nav-links a:focus {
     outline: 2px solid var(--c-beige);
     border-radius: 5px;
+    padding: 0.5rem;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }
 
 @keyframes slideIn {
@@ -193,6 +202,7 @@ header {
         opacity: 0;
         transform: translateX(-20%);
     }
+
 
     to {
         opacity: 1;
@@ -203,22 +213,16 @@ header {
 /* ----------------- hero ----------------- */
 .hero {
     display: grid;
-    grid-template-rows: 12% 1fr;
-    gap: 1rem;
+    grid-template-rows: repeat(2, auto);
 }
 
 .hero_image {
     justify-self: end;
     align-self: center;
-    width: 230px;
+    width: 65%;
     height: auto;
     overflow: hidden;
     animation: smooth-rotation 6s infinite;
-}
-
-.hero_image-url {
-    width: calc(100% * 2);
-    height: auto;
 }
 
 .hero_image:hover {
@@ -246,15 +250,20 @@ header {
 
 .hero_image-url {
     width: calc(100% * 2);
-    height: 100%;
+    height: auto;
 }
 
-.hero_button_container {
+.gri {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-self: center;
     align-items: center;
     text-align: center;
+    gap: 1rem;
+}
+
+.gri-text {
+    font-size: var(--fs-xs);
 }
 
 @keyframes smooth-rotation {
@@ -272,6 +281,97 @@ header {
 }
 
 /* ------------- martina ------------- */
+.martina_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    position: relative;
+    gap: 0;
+}
+
+.martina {
+    grid-row: span 2;
+    width: 110%;
+    object-fit: cover;
+    transform: rotate(-3deg);
+    transform-origin: center;
+    justify-self: center;
+}
+
+.martina_stemple {
+    grid-row: 2;
+    grid-column: 1;
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%) rotate(10deg);
+    z-index: 1;
+    width: 50%;
+    object-fit: contain;
+}
+
+/* ---------------- map ----------------  */
+.map {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 1fr;
+    height: 100vh;
+    background: url('rand.webp');
+    background-repeat: no-repeat;
+    color: var(--c-beige);
+    padding: 20px;
+    margin-left: -2rem;
+    margin-right: -2rem;
+}
+
+.map_year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-xxl);
+    font-weight: bold;
+    z-index: 2;
+    grid-row: 1;
+}
+
+.map_year-text {
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+
+.map_content {
+    display: grid;
+    grid-template-rows: 40% 60%;
+    place-items: center;
+    grid-row: 2;
+    position: relative;
+    margin-right: -2rem;
+}
+
+.map_text {
+    grid-column: 1;
+    grid-row: 1;
+    display: none;
+    opacity: 0;
+}
+
+.map_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    grid-row: span 2;
+}
+
+.map_image-url {
+    width: 230%;
+    /* height: 100%; */
+    /* transform: translate(-50%, -50%); */
+    /* height: auto; */
+    /* height: calc(100% * 2); */
+}
 
 /* ---------------------- media queries ---------------------- */
 @media (min-width: 830px) {
@@ -318,11 +418,24 @@ header {
         margin-top: 5rem;
     }
 
-    .hero_button_container {
+    .gri {
         flex-direction: row;
     }
 
-    .hero_button_container {
+    .gri {
         gap: 2rem;
+    }
+
+    .martina {
+        width: 50%;
+    }
+
+    .martina_stemple {
+        width: 25%;
+    }
+
+    .map_image {
+        width: 31%;
+        justify-self: end;
     }
 }
