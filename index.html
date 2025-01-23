@@ -13,6 +13,8 @@
 <body>
   <header>
     <div class="navbar">
+      <img class="logo_nav" src="logo_nav.webp" alt="logo" class="logo" />
+      <button class="button button_nav">Koop tickets</button>
       <button id="hamburger" aria-expanded="false" aria-label="Toggle navigation" class="hamburger" tabindex="0">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -23,44 +25,46 @@
         <li><a href="#">Het museum</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Contact</a></li>
-        <button class="button nav_button">Koop tickets</button>
       </ul>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div>
+      <div class="hero_background">
         <div class="hero_image">
           <img src="plantin.webp" alt="plantin" class="hero_image-url" />
         </div>
-      </div>
-      <p class="gold hero_wie hero_wie-1 hero_toggle-1">Wie oh wie is hij?</p>
-      <p class="gold hero_wie hero_wie-2 hero_toggle-2">Mijn vader !</p>
-      <div class="hero_text_container">
-        <h1 id="hero_title1">De Stem van Plantijn</h1>
-        <p class="hero_text hero_text-1 hero_toggle-1" id="hero_text1">Hij was een man zoals er maar weinigen zijn. Zijn
-          naam klonk door heel Europa, maar wie hij écht was, blijft een raadsel. De geur
-          van inkt, het ritme van drukpersen – daarmee bracht hij verhalen tot leven. Zijn werk liet een blijvende
-          indruk achter.
-          Ontdek zijn wereld in het Plantin-Moretus Museum en zie waar zijn nalatenschap begon.</p>
-        <p class=" hero_text hero_text-2 hero_toggle-2" id="hero_text2">Die man? Dat was mijn vader, Christophe Plantin.
-          Een visionair
-          die boeken
-          meer zag dan enkel woorden
-          op
-          papier – hij
-          geloofde dat ze de wereld konden veranderen. Met zijn drukpersen bracht hij ideeën tot leven en gaf hij kennis
-          een
-          stem
-          die door heel Europa weerklonk. Hij was niet zomaar een drukker, hij was mijn vader. Een man die zijn wijsheid
-          deelde
-          in
-          zijn woorden en zijn liefde toonde in zijn werk.</p>
-        <div class="hero_button_container">
-          <button class="button">Koop tickets</button>
-          <p>of</p>
-          <p class="gold hero_button_container-text">Scrol om te ontdekken</p>
+        <img class="pijl_wie" src="pijl_2.webp" alt="Pijl">
+        <p class="gold hero_wie hero_wie-1 hero_toggle-1">Wie oh<br> wie is hij?</p>
+        <p class="gold hero_wie hero_wie-2 hero_toggle-2">Mijn vader !</p>
+        <div class="hero_text_container">
+          <h1 class="hero_title1" id="hero_title1">De reis naar<br> perfectie</h1>
+          <p class="hero_text hero_text-1 hero_toggle-1" id="hero_text1">Hij was een man zoals er maar weinigen zijn.
+            Zijn
+            naam klonk door heel Europa, maar wie hij écht was, blijft een raadsel. De geur
+            van inkt, het ritme van drukpersen – daarmee bracht hij verhalen tot leven. Zijn werk liet een blijvende
+            indruk achter.
+            Ontdek zijn wereld in het Plantin-Moretus Museum en zie waar zijn nalatenschap begon.</p>
+          <p class=" hero_text hero_text-2 hero_toggle-2" id="hero_text2">Die man? Dat was mijn vader, Christophe
+            Plantin.
+            Een man die meer zag in boeken
+            dan enkel woorden.
+            Hij
+            geloofde dat ze de wereld konden veranderen. Met zijn drukpersen bracht hij ideeën tot leven en gaf hij
+            kennis
+            een
+            stem. Hij was niet zomaar een drukker, hij was mijn vader. Een man die zijn
+            wijsheid
+            deelde
+            in
+            zijn woorden en zijn liefde toonde in zijn werk.</p>
+          <div class="hero_button_container">
+            <p class="ruit ruit-light hero_button_container-text">
+              Scrol om <br>te ontdekken
+              <img src="pijl.webp" alt="Pijl">
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -69,8 +73,15 @@
         <img src="/Martina_Plantin.webp" alt="Martina_Plantin" class="martina" />
         <img src="/stempel.webp" alt="Martina_Plantin" class="martina_stemple" />
       </div>
-      <p class="gold martina_gold martina_gold-1">Martina Plantijn</p>
-      <p>Eventjes terug – laat ik mij eerst even voorstellen. Mijn naam is Martina Plantijn, de tweede dochter van
+      <p class="ruit ruit-black ruit_toggle">Scrol om verder <br>te gaan
+        <img src="pijl.webp" alt="Pijl">
+      </p>
+      <div class="martina_gold_container">
+        <p class="gold martina_gold martina_gold-1">Martina Plantijn</p>
+        <img class="pijl_martina" src="pijl_2.webp" alt="Pijl">
+      </div>
+      <p class="martina_text">Eventjes terug – laat ik mij eerst even voorstellen. Mijn naam is Martina Plantijn, de
+        tweede dochter van
         Christoffel
         Plantijn – ja, díe Christoffel Plantijn, meesterdrukker van Antwerpen. Ik groeide op in een huis vol boeken,
         niet zomaar
@@ -78,7 +89,7 @@
         vertellen,
         het verhaal van een man die de wereld met inkt en papier vormgaf.</p>
     </section>
-
+    </div>
     <section class="map">
       <div class="map_year">
         <h2 class="map_year-text map1520">1520</h2>
@@ -90,13 +101,19 @@
           <p>
             Mijn vader werd geboren in 1520 in het Franse Saint-Avertin. Als jongen verloor hij zijn ouders en moest hij
             vechten
-            voor zijn toekomst. Hij stopte zijn studie en vertrok naar Caen in Normandië,
+            voor zijn toekomst. Hij stopte zijn studie en vertrok naar Cean in Normandië,
           </p>
           <p>
-            De stad Caen in Normandië stond bekend om haar vele boekbinderijen, drukkers en goedkoopheid. Hier kon mijn
+            De stad Cean in Normandië stond bekend om haar vele boekbinderijen, drukkers en goedkoopheid. Hier kon mijn
             vader als
             wees een nieuw leven beginnen.
           </p>
+          <div class="pers_img">
+            <p class="ruit ruit-black ruit_pers">Probeer <br> het zelf
+              <img src="pijl.webp" alt="Pijl">
+            </p>
+            <img src="pers.webp" alt="pers" class="map_image-pers" />
+          </div>
         </div>
         <div class="map_text map1545">
           <p>
@@ -104,6 +121,13 @@
             Samen
             vertrokken ze naar Parijs, waar mijn vader werkte bij de drukker Jean Bogard.
           </p>
+          <div class="map_gold_container">
+            <img src="/moeder.webp" alt="Martina_Plantin" class="map_mama" />
+            <div class="map_gold_container-2">
+              <img class="pijl_martina pijl_map" src="pijl.webp" alt="Pijl">
+              <p class="gold">Mijn moeder</p>
+            </div>
+          </div>
         </div>
         <div class="map_text map1548">
           <p>
@@ -116,21 +140,114 @@
           </p>
         </div>
         <div class="map_image">
-          <img src="map.webp" alt="map" class="map_image-url" />
+          <img src="map_gsm.webp" alt="map" class="map_image-url" />
         </div>
       </div>
     </section>
     <section class="helaas">
       <div class="helaas_container">
-        <h2 class="helaas_1">Helaas</h2>
-        <h2 class="helaas_2">Helaas</h2>
-        <h2 class="helaas_3">Helaas</h2>
+        <div class="helaas_1">
+          <h2 class="helaas_1-grijs">H</h2>
+          <p>Helaas</p>
+        </div>
+        <div class="helaas_2">
+          <h2 class="helaas_2-grijs">H</h2>
+          <p>Helaas</p>
+        </div>
+        <div class="helaas_3">
+          <h2 class="helaas_3-grijs">H</h2>
+          <p>Helaas</p>
+        </div>
       </div>
-      <p class="helaas_text">Eenmaal we aankamen in Antwerpen kon mijn vader zijn droom nog niet waarmaken. Hij werkte
-        nog even als
-        boekbinder en
-        handelaar in linnen. Dit was noodzakelijk om genoeg kapitaalop te bouwen. Met veel geduld en hard werken is het
-        uitendelijk gelukt.</p>
+      <p class="helaas_text">
+        Eenmaal we aankamen in Antwerpen kon mijn vader zijn droom nog niet waarmaken. Hij werkte
+        nog even als boekbinder en handelaar in linnen. Dit was noodzakelijk om genoeg kapitaal op te bouwen. Met veel
+        geduld en hard werken is het uiteindelijk gelukt.
+      </p>
+    </section>
+    <section class="contract">
+      <p>Gelukkig moesten we niet te lang wachten. Na 2 jaar kon mijn vader officieel geregistreerd worden als poorter
+        en
+        lid van
+        het kunstnijverheidsgilde.</p>
+      <p>Ik was zo trots op mijn vader. hij kon eindelijk zijn passie voortzetten. Maar dat was niet het enige dat
+        gebeurde dit
+        jaar. dit was ook het jaar dat ik geboren was.</p>
+      <p class="ruit ruit-black">Teken het <br> contract
+        <img src="pijl.webp" alt="Pijl">
+      </p>
+      <div class="contract_container">
+        <h1 class="contract_title">Registratiecontract</h1>
+        <p class="contract_date">Datum van registratie: <strong>21 maart 1550</strong></p>
+        <div>
+          <p> Ondergetekende, <strong>Christophe Plantin</strong>, verklaart hierbij officieel geregistreerd te zijn als
+            poorter
+            van Antwerpen, trouw aan de stad en haar wetten. </p>
+        </div>
+        <div class="signature">
+
+          <div>
+            <img alt="signature" id="signature" class="signature_img" />
+            <p class="signature_text">Handtekening</p>
+          </div>
+          <button id="openSignature" class="button">Plaats handtekening</button>
+        </div>
+      </div>
+    </section>
+    <div id="canvas-overlay" class="overlay">
+      <canvas id="drawingCanvas"></canvas>
+      <button id="storeSignature" class="button">Teken</button>
+      <button id="resetSignature" class="button">Reset</button>
+    </div>
+    <section class="labore">
+      <img src="labore.png" alt="labore" class="labore_img" />
+      <p class="labore_vertaling">Door standvastigheid en harde arbeid</p>
+      <p>Vijf jaar later, in 1555, richtte hij zijn levenswerk op: De Gulden Passer. Deze drukkerij markeerde het begin
+        van een
+        ongeëvenaarde carrière. Hier bracht hij zijn visie tot leven – boeken die niet alleen informatief waren, maar
+        ook
+        visueel en technisch perfect. Elk project weerspiegelde zijn liefde voor het ambacht en zijn streven naar
+        excellentie.</p>
+    </section>
+    <section class="perfection">
+      <div class="star_container">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
+      <p class="perfection_text">Perfectie was het fundament van mijn vaders werk. Voor hem was elk boek een kunstwerk
+        dat tot in de kleinste
+        details
+        klopte. Hij spendeerde uren aan het kiezen van het juiste lettertype, het testen van papier, en het verfijnen
+        van
+        lay-outs om de boodschap van de schrijver optimaal te presenteren. Geen drukproef verliet zijn werkplaats zonder
+        zijn
+        goedkeuring.</p>
+      <div class="star_container">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+      </div>
+      <div class="random-grid">
+        <span>E</span><span>e</span><span>n</span><span> </span>
+        <span>b</span><span>o</span><span>e</span><span>k</span><span> </span>
+        <span>i</span><span>s</span><span> </span>
+        <span>m</span><span>e</span><span>e</span><span>r</span><span> </span>
+        <span>d</span><span>a</span><span>n</span><span> </span>
+        <span>p</span><span>a</span><span>p</span><span>i</span><span>e</span><span>r</span><span> </span>
+        <span>e</span><span>n</span><span> </span>
+        <span>i</span><span>n</span><span>k</span><span>t</span><span class="random_punt">.</span><span> </span>
+        <span>H</span><span>e</span><span>t</span><span> </span>
+        <span>i</span><span>s</span><span> </span>
+        <span>e</span><span>e</span><span>n</span><span> </span>
+        <span>b</span><span>r</span><span>u</span><span>g</span><span> </span>
+        <span>d</span><span>i</span><span>e</span><span> </span>
+        <span>w</span><span>e</span><span>r</span><span>e</span><span>l</span><span>d</span><span>e</span><span>n</span><span>
+        </span>
+        <span>v</span><span>e</span><span>r</span><span>b</span><span>i</span><span>n</span><span>d</span><span>t</span><span
+          class="random_punt">.</span>
+      </div>
+      <img src="wereld.png" alt="logo" class="wereld_img" />
     </section>
   </main>
   <script type="module" src="/src/main.js"></script>
