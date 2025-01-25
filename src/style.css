@@ -393,10 +393,10 @@ source {
     grid-column: 1;
     position: absolute;
     top: 80%;
-    left: 60%;
+    left: 80%;
     transform: translate(-50%, -50%) rotate(10deg);
     z-index: 1;
-    width: 70%;
+    width: 50%;
     object-fit: contain;
 }
 
@@ -412,10 +412,9 @@ source {
 }
 
 .pijl_martina {
-    width: 25%;
-    height: 100%;
-    transform: rotate(-80deg);
-    margin-left: 1rem;
+    width: 20%;
+    height: 60%;
+    transform: rotate(-25deg);
 }
 
 .martina_gold {
@@ -441,8 +440,9 @@ source {
     grid-template-columns: 100%;
     grid-template-rows: 17% auto;
     height: 100vh;
-    margin-top: 20rem;
-    overflow: hidden;
+    color: var(--c-beige);
+    margin: 0rem 1.5rem;
+    /* margin-top: 5rem; */
 }
 
 .map_year {
@@ -473,7 +473,9 @@ source {
 }
 
 .map_year-text {
-    margin: 0;
+    position: absolute;
+    display: none;
+    opacity: 0;
 }
 
 .map_year-text,
