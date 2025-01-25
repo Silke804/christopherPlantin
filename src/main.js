@@ -1,7 +1,7 @@
 import './style.css'
-document.addEventListener("DOMContentLoaded", (event) => {
-    gsap.registerPlugin(ScrollTrigger);
 
+function init() {
+    gsap.registerPlugin(ScrollTrigger);
     initHamburgerMenu();
     initPlantijnAnimation();
     initMartinaAnimation();
@@ -9,48 +9,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initHelaasAnimation();
     initDrawing();
     initPerfectionRandomizer();
-});
-
-function initHelaasAnimation() {
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".helaas_container",
-            endTrigger: ".helaas_container",
-            //  scrub: true,
-            // markers: true,
-            //pin: ".martina_wrapper",
-            start: 'top center',
-            end: 'top center'
-        }
-    });
-
-    tl.from(".helaas_1", { scale: 0 })
-    tl.from(".helaas_2", { scale: 0 })
-    tl.from(".helaas_3", { scale: 0 })
-}
-
-function initMartinaAnimation() {
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".martina_container",
-            endTrigger: ".martina_container",
-            //scrub: true,
-            // markers: true,
-            //pin: ".martina_wrapper",
-            start: 'top center',
-            end: 'top center',
-        },
-    });
-
-    tl.from(".martina_wrapper", { scale: 0 })
-    tl.to(".martina_wrapper", { scale: 1.1, ease: "bounce", duration: 1 })
-    tl.to(".martina_wrapper", { scale: 1, ease: "back.out", duration: 0.25 })
-
-    // Mag pas starten als je verder scrolled.na de fix van de grote img 
-    tl.to(".martina_stemple", { display: 'none' }) //start samen met de vorige
-    tl.to(".ruit_toggle", { display: 'none' }) //start samen met de vorige
-    tl.to(".martina", { scale: 0.7, ease: "back.out", duration: 0.25, marginTop: '3rem' }) //start samen met de vorige
-
 }
 
 function initHamburgerMenu() {
@@ -82,65 +40,6 @@ function initHamburgerMenu() {
     });
 }
 
-function initMapAnimation() {
-    const mapCol = 2;
-    const mapRow = 2;
-    const mapStepX = 1 / mapCol;
-    const mapStepY = 1 / mapRow;
-    const mapPositions = [
-        { x: 0, y: 0, target: ".map1520" },
-        { x: 1, y: 0, target: ".map1545" },
-        { x: 0, y: 1, target: ".map1548" },
-        // { x: 1, y: 1 }
-    ]
-
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".map",
-            endTrigger: ".map",
-            scrub: true,
-            markers: true,
-            pin: ".map",
-            // start: 'end end',
-            // end: '500 end',
-        },
-    });
-
-    const map = {
-        step: 0
-    };
-    const mapImage = document.querySelector(".map_image-url")
-
-    tl.to(map, {
-        step: mapPositions.length - 1,
-        ease: SteppedEase.config(mapPositions.length - 1),
-        onUpdate: () => {
-            const currentPosition = mapPositions[map.step];
-            mapImage.style.transform = `translate(${-100 * currentPosition.x * mapStepX
-                }%, ${-100 * currentPosition.y * mapStepY}%)`;
-
-            for (let i = 0; i < mapPositions.length; i++) {
-                let elements = document.querySelectorAll(mapPositions[i].target);
-                if (elements) {
-                    elements.forEach(element => {
-                        if (mapPositions[i].target === currentPosition.target) {
-                            //show
-                            //element.style.display = 'block';
-                            gsap.to(element, { opacity: 1, display: 'block', ease: 'power2.out', duration: 1 })
-
-                        } else {
-                            //element.style.display = 'none';
-                            gsap.to(element, { display: 'none', opacity: 0, ease: 'power2.out', duration: 1 })
-                            //hide
-                        }
-                    });
-                }
-            }
-        }
-    })
-}
-
-
 function initPlantijnAnimation() {
     //define sprite variables for swapping
     const plantijnColm = 2;
@@ -155,11 +54,11 @@ function initPlantijnAnimation() {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".navbar",
+            endTrigger: ".martina_container",
             scrub: true,
-            // markers: true,
+            //            markers: true,
             pin: ".hero",
-            start: 'end end',
-            end: '500 end',
+            end: "-=200"
         },
     });
 
@@ -180,8 +79,140 @@ function initPlantijnAnimation() {
     });
     //Text toggle animation post sprite swap
     tl.to(".hero_toggle-1", { display: "none", opacity: 0, ease: "power2.out", duration: 1 }, ">")
-    tl.to(".hero_toggle-2", { display: "block", opacity: 1, ease: "power2.out", duration: 1 })
+    tl.to(".hero_toggle-2", { display: "block", opacity: 1, ease: "power2.out", duration: 1 }, ">")
+    tl.to(".hero_title1", { color: "#EBDFD3", })
 }
+
+function initMartinaAnimation() {
+
+
+    const mm = gsap.matchMedia();
+    mm.add(
+        {
+            isDevice: "(max-width: 900px)",
+            isDesktop: "(min-width: 900px)",
+        }, (context) => {
+            const { conditions } = context;
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".martina_container",
+                    endTrigger: ".martina_container",
+                    scrub: true,
+                    markers: true,
+                    pin: ".martina_container",
+                    start: 'top',
+                    end: 'bottom'
+                }
+            });
+            console.log(conditions)
+            if (conditions.isDevice) {
+
+                tl.from(".martina_wrapper", { scale: 0 })
+                tl.to(".martina_wrapper", { scale: 1.1, ease: "bounce", duration: 1 })
+                tl.to(".martina_wrapper", { scale: 1, ease: "back.out", duration: 1 })
+                tl.to(".martina_stemple", { display: 'none' }, ">")
+                tl.to(".ruit_toggle", { display: 'none' }, ">")
+                tl.to(".martina", { scale: 0.7, ease: "back.out", duration: 0.25, marginTop: '3rem' }, ">")
+                tl.to(".martina_final", { display: 'block', ease: "power2.in", duration: 0.5 })
+            }
+
+            if (conditions.isDesktop) {
+                //tl.from(".martina_wrapper", { scale: 0 })
+                tl.to(".martina_wrapper", { scale: 0.5, ease: "bounce", duration: 1 }, "<")
+                tl.to(".martina_wrapper", { scale: 0.4, ease: "back.out", duration: 1 }, "<")
+                tl.to(".martina_stemple", { display: 'none' }, "<")
+                tl.to(".ruit_toggle", { display: 'none' }, "<")
+                tl.to(".martina", { scale: 4, ease: "back.out", duration: 0.25, marginTop: '3rem' })
+                tl.to(".martina_final", { display: 'block', ease: "power2.in", duration: 0.5 }, "<")
+                tl.to(".martina_container", { flexDirection: "row-reverse" }, "<"); // voegt flex-direction toe
+
+            }
+        });
+
+
+
+}
+
+function initHelaasAnimation() {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".helaas_container",
+            endTrigger: ".helaas_container",
+            //  scrub: true,
+            // markers: true,
+            //pin: ".martina_wrapper",
+            start: 'top center',
+            end: 'top center'
+        }
+    });
+
+    tl.from(".helaas_1", { scale: 0 })
+    tl.from(".helaas_2", { scale: 0 })
+    tl.from(".helaas_3", { scale: 0 })
+}
+
+
+
+// function initMapAnimation() {
+//     const mapCol = 2;
+//     const mapRow = 2;
+//     const mapStepX = 1 / mapCol;
+//     const mapStepY = 1 / mapRow;
+//     const mapPositions = [
+//         { x: 0, y: 0, target: ".map1520" },
+//         { x: 1, y: 0, target: ".map1545" },
+//         { x: 0, y: 1, target: ".map1548" },
+//         // { x: 1, y: 1 }
+//     ]
+
+//     const tl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: ".map",
+//             endTrigger: ".map",
+//             scrub: true,
+//             // markers: true,
+//             pin: ".map",
+//             // start: 'end end',
+//             // end: '500 end',
+//         },
+//     });
+
+//     const map = {
+//         step: 0
+//     };
+//     const mapImage = document.querySelector(".map_image-url")
+
+//     tl.to(map, {
+//         step: mapPositions.length - 1,
+//         ease: SteppedEase.config(mapPositions.length - 1),
+//         onUpdate: () => {
+//             const currentPosition = mapPositions[map.step];
+//             mapImage.style.transform = `translate(${-100 * currentPosition.x * mapStepX
+//                 }%, ${-100 * currentPosition.y * mapStepY}%)`;
+
+//             for (let i = 0; i < mapPositions.length; i++) {
+//                 let elements = document.querySelectorAll(mapPositions[i].target);
+//                 if (elements) {
+//                     elements.forEach(element => {
+//                         if (mapPositions[i].target === currentPosition.target) {
+//                             //show
+//                             //element.style.display = 'block';
+//                             gsap.to(element, { opacity: 1, display: 'block', ease: 'power2.out', duration: 1 })
+
+//                         } else {
+//                             //element.style.display = 'none';
+//                             gsap.to(element, { display: 'none', opacity: 0, ease: 'power2.out', duration: 1 })
+//                             //hide
+//                         }
+//                     });
+//                 }
+//             }
+//         }
+//     })
+// }
+
+
+
 
 
 function initDrawing() {
@@ -303,3 +334,144 @@ function initPerfectionRandomizer() {
         letter.style.transform = `translate(${Math.random() * randomTranslate}%,${Math.random() * randomTranslate}%) rotate(${Math.random() * 360}deg)`;
     });
 }
+
+
+
+
+
+
+
+
+
+
+// function initMapAnimation() {
+//     const mapCol = 2;
+//     const mapRow = 2;
+//     const mapStepX = 1 / mapCol;
+//     const mapStepY = 1 / mapRow;
+//     const mapPositions = [
+//         { x: 0, y: 0, target: ".map1520", year: 1520 },
+//         { x: 1, y: 0, target: ".map1545", year: 1545 },
+//         { x: 0, y: 1, target: ".map1548", year: 1548 },
+//     ];
+
+//     const tl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: ".map",
+//             endTrigger: ".map",
+//             scrub: true,
+//             pin: ".map",
+//         },
+//     });
+
+//     const map = {
+//         step: 0
+//     };
+//     const mapImage = document.querySelector(".map_image-url");
+//     const yearElement = document.querySelector(".map_year h2"); // Verwijzing naar het jaartal
+
+//     tl.to(map, {
+//         step: mapPositions.length - 1,
+//         ease: SteppedEase.config(mapPositions.length - 1),
+//         onUpdate: () => {
+//             const currentPosition = mapPositions[map.step];
+//             mapImage.style.transform = `translate(${-100 * currentPosition.x * mapStepX
+//                 }%, ${-100 * currentPosition.y * mapStepY}%)`;
+
+//             // Update de zichtbaarheid van de teksten
+//             for (let i = 0; i < mapPositions.length; i++) {
+//                 let elements = document.querySelectorAll(mapPositions[i].target);
+//                 if (elements) {
+//                     elements.forEach(element => {
+//                         if (mapPositions[i].target === currentPosition.target) {
+//                             // Show active element
+//                             gsap.to(element, { opacity: 1, display: 'block', ease: 'power2.out', duration: 1 });
+//                         } else {
+//                             // Hide inactive elements
+//                             gsap.to(element, { display: 'none', opacity: 0, ease: 'power2.out', duration: 1 });
+//                         }
+//                     });
+//                 }
+//             }
+
+//             // Update het jaartal
+//             gsap.to(yearElement, {
+//                 textContent: currentPosition.year,
+//                 duration: 0.5,
+//                 ease: "power2.out",
+//                 snap: { textContent: 1 },
+//             });
+//         }
+//     });
+// }
+
+
+
+
+
+function initMapAnimation() {
+    const mapCol = 2;
+    const mapRow = 2;
+    const mapStepX = 1 / mapCol;
+    const mapStepY = 1 / mapRow;
+    const mapPositions = [
+        { x: 0, y: 0, target: ".map1520", year: 1520 },
+        { x: 1, y: 0, target: ".map1545", year: 1545 },
+        { x: 0, y: 1, target: ".map1548", year: 1548 }, // Eindjaar 1580
+    ];
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".map",
+            endTrigger: ".map",
+            scrub: true,
+            pin: ".map",
+        },
+    });
+
+    const map = {
+        step: 0
+    };
+    const mapImage = document.querySelector(".map_image-url");
+    const yearElement = document.querySelector(".map_year h2"); // Het jaartal-element
+
+    // Voeg een animatie toe die door de jaartallen gaat
+    tl.to(map, {
+        step: mapPositions.length - 1,
+        ease: SteppedEase.config(mapPositions.length - 1),
+        onUpdate: () => {
+            const currentPosition = mapPositions[map.step];
+            mapImage.style.transform = `translate(${-100 * currentPosition.x * mapStepX}%, ${-100 * currentPosition.y * mapStepY}%)`;
+
+            // Update zichtbaarheid van teksten
+            for (let i = 0; i < mapPositions.length; i++) {
+                let elements = document.querySelectorAll(mapPositions[i].target);
+                if (elements) {
+                    elements.forEach(element => {
+                        if (mapPositions[i].target === currentPosition.target) {
+                            gsap.to(element, { opacity: 1, display: 'block', ease: 'power2.out', duration: 1 });
+                        } else {
+                            gsap.to(element, { display: 'none', opacity: 0, ease: 'power2.out', duration: 1 });
+                        }
+                    });
+                }
+            }
+
+            // Update het jaartal met telanimatie
+            const startYear = map.step === 1 ? 1520 : 1545; // Startjaar afhankelijk van de stap
+            const endYear = currentPosition.year;
+
+            gsap.to(yearElement, {
+                duration: 0.5,
+                textContent: endYear,
+                ease: "power2.out",
+                snap: { textContent: 1 }, // Afronding naar hele getallen
+            });
+        }
+    });
+}
+
+
+
+
+init();
