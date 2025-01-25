@@ -34,10 +34,6 @@ body {
     margin-top: -0.5rem;
 }
 
-/* main {
-    margin: 0rem 1.5rem;
-} */
-
 img {
     width: 100%;
     height: auto;
@@ -147,7 +143,7 @@ header {
 
 .logo_nav {
     z-index: 2;
-    width: 20%;
+    width: 40%;
 }
 
 .nav-links {
@@ -242,7 +238,10 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     margin-top: -1rem;
+}
 
+.drukker {
+    display: none;
 }
 
 .hero_button_container-text {
@@ -376,21 +375,16 @@ body.no-scroll {
 }
 
 /* ------------- martina ------------- */
-.martina_container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    position: relative;
-    gap: 0;
-    margin: -5rem 1.5rem 0rem 1.5rem;
+
+.martina_wrapper {
+    grid-row: 1;
+    margin-top: 5rem;
+    justify-content: center;
 }
 
 .martina {
-    grid-row: span 2;
-    width: 110%;
-    object-fit: cover;
+    width: 90%;
     transform: rotate(-3deg);
-    transform-origin: center;
     justify-self: center;
 }
 
@@ -399,85 +393,97 @@ body.no-scroll {
     grid-column: 1;
     position: absolute;
     top: 80%;
-    left: 80%;
+    left: 70%;
     transform: translate(-50%, -50%) rotate(10deg);
     z-index: 1;
-    width: 50%;
+    width: 40%;
     object-fit: contain;
 }
 
 .martina_gold_container {
     display: flex;
+    flex-direction: column-reverse;
     height: 50px;
     gap: 1rem;
     margin-bottom: 4rem;
     margin-top: -4rem;
+    margin-left: 6rem;
+    grid-row: 1;
 }
 
 .pijl_martina {
     width: 20%;
-    height: 60%;
-    transform: rotate(-25deg);
+    height: 100%;
+    transform: rotate(-180deg);
+    margin-left: 1rem;
 }
 
 .martina_gold {
     align-self: center;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .martina_text {
-    margin-top: -2rem;
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0rem 2rem;
+}
+
+.martina_gold_container,
+.martina_text {
+    display: none;
 }
 
 /* ---------------- map ----------------  */
-.map_content {
+.map {
     display: grid;
-    grid-template-columns: 80%;
-    grid-template-rows: 15% 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 17% auto;
     height: 100vh;
-    color: var(--c-beige);
-    margin: 0rem 1.5rem;
-    /* margin-top: 5rem; */
+    margin-top: 20rem;
 }
 
 .map_year {
     background: url('rand.webp');
     background-repeat: repeat-x;
-    height: 17%;
-    font-size: var(--fs-xxl);
-    color: var(--c-beige);
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    background-size: cover;
+    font-size: var(--fs-xxl);
+    color: var(--c-beige);
+    margin-right: -1rem;
+
 }
 
 .map_year-text {
-    position: absolute;
     display: none;
-    opacity: 0;
 }
 
 .map_text {
-    margin-top: 2rem;
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 1.5rem;
+}
+
+.map_content {
+    display: grid;
+    grid-template-columns: 70% auto;
+    width: 100%;
+    grid-template-rows: 90%;
+    color: var(--c-beige);
+    margin-bottom: 5rem;
+}
+
+.map_year-text {
+    margin: 0;
+}
+
+.map_year-text,
+.map_text {
     display: none;
     opacity: 0;
-}
-
-.map_image {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.pers_img {
-    margin-left: 2rem;
-}
-
-.ruit_pers img {
-    width: 120%;
-    top: 140%;
 }
 
 .map_image-pers {
@@ -485,9 +491,45 @@ body.no-scroll {
     width: 40%;
 }
 
-.map_image-url {
-    width: 230%;
-    z-index: 1;
+.ruit_pers img {
+    width: 120%;
+    top: 140%;
+}
+
+.map_image {
+    grid-row: 2;
+    z-index: -1;
+    position: absolute;
+    width: 210%;
+    height: 20%;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.map_text {
+    margin-top: 2rem;
+    grid-column: 1;
+}
+
+.map_image-pers {
+    margin-top: 2rem;
+    width: 40%;
+}
+
+.map_mama {
+    width: 60%;
+}
+
+.pijl_map {
+    width: 20%;
+    transform: rotate(-180deg);
+    margin-left: 2rem;
+}
+
+.map1520 {
+    display: block;
+    opacity: 1;
 }
 
 .map_gold_container {
@@ -502,14 +544,11 @@ body.no-scroll {
     flex-direction: column;
 }
 
-.map_mama {
-    width: 60%;
-}
-
-.pijl_map {
-    width: 20%;
-    transform: rotate(-180deg);
-    margin-left: 2rem;
+.map_image-url {
+    width: 200%;
+    height: auto;
+    object-fit: cover;
+    object-position: top left;
 }
 
 /* ------------------ helaas ------------------ */
@@ -714,7 +753,6 @@ body.no-scroll {
 .star {
     width: 40px;
     height: 40px;
-
     background-color: var(--c-gold);
     clip-path: polygon(50% 0%,
             61% 35%,
@@ -785,12 +823,22 @@ body.no-scroll {
 }
 
 @media (min-width: 900px) {
+    a {
+        font-size: var(--fs-s);
+    }
+
+    .gold {
+        font-size: var(--fs-l);
+        text-align: center;
+    }
+
+    /* ----------- navigatie ------------ */
     .nav-links {
         animation: none;
     }
 
-    .hero_text_container {
-        max-width: 70%;
+    .logo_nav {
+        width: 25%;
     }
 
     header {
@@ -798,31 +846,217 @@ body.no-scroll {
         padding: 2rem 4rem;
     }
 
-    .hero {
-        grid-template-columns: 50% 50%;
-        height: 100%;
-        grid-template-rows: 1fr;
-        margin-top: 5rem;
+    /* -------- hero ------------ */
+    .hero_background {
+        background-image: none;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        gap: 15%;
+        align-content: space-around;
     }
 
-    .gri {
+    .hero_text_container {
+        max-width: 40%;
+        margin-top: 6.5rem;
+    }
+
+    .hero_image {
+        width: 30%;
+        justify-self: start;
+        align-self: start;
+    }
+
+    .hero_text,
+    .hero_title1 {
+        color: var(--c-black);
+        float: left;
+    }
+
+    .hero_text-2 {
+        color: var(--c-beige);
+    }
+
+    .hero_wie {
+        top: 20%;
+        left: 55%;
+    }
+
+    .pijl_wie {
+        top: 34%;
+        left: 58%;
+        width: 8%;
+    }
+
+    .pijl_wie-2 {
+        top: 28%;
+    }
+
+    .hero_button_container {
+        text-align: right;
+        justify-content: end;
+        justify-self: end;
+        align-self: flex-end;
+        align-self: end;
+    }
+
+    .hero_button_container-text {
+        margin-top: 6.5rem;
+    }
+
+    /* ---------- martina ------------  */
+    .drukker {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 50;
+        width: 100%;
+    }
+
+    .martina_container {
+        gap: 0;
+        display: flex;
+    }
+
+    .ruit_toggle {
+        margin-right: 10rem;
+    }
+
+    .martina_container {
+        display: flex;
         flex-direction: row;
+        align-items: center;
+        margin-top: 5rem;
+        justify-content: center;
+        margin: 0rem;
+        margin-top: -10rem;
+        width: 80%;
+        /* margin-top: -30rem; */
     }
 
-    .gri {
-        gap: 2rem;
+    .martina_wrapper {
+        align-self: center;
+        margin: 0;
+    }
+
+    .pijl_martina {
+        transform: scaleY(-1) rotate(40deg);
+        margin-top: 1rem;
+        margin-bottom: -1rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    .martina_gold {
+        margin-top: 2rem;
+    }
+
+    .martina_stemple {
+        width: 25%;
+        left: 70%;
+    }
+
+    .martina_text {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
+        display: none;
+        margin-left: 12rem;
     }
 
     .martina {
         width: 50%;
     }
 
-    .martina_stemple {
-        width: 25%;
+    /* ------------ map ------------ */
+
+    .map {
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 100%;
+        height: 100vh;
+        /* position: relative; */
+    }
+
+    .map_year {
+        transform: rotate(-90deg);
+        /* position: absolute; */
+        text-orientation: mixed;
+        /* Zorgt voor nette tekstweergave */
+        /* width: 100vw; */
+        grid-row: 1;
+        grid-column: 1;
+        align-self: center;
+    }
+
+    .map_year-text {
+        /* padding: 50rem; */
+    }
+
+    .map_text {
+        grid-column: 1;
     }
 
     .map_image {
-        width: 31%;
+        grid-column: 2;
+        grid-row: 1;
+        width: 40%;
         justify-self: end;
     }
+
+    /* ------------ helaas ------------ */
+    .helaas_container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .helaas_1 h2,
+    .helaas_2 h2,
+    .helaas_3 h2 {
+        font-size: 2rem;
+    }
+
+    .helaas_1 p,
+    .helaas_2 p,
+    .helaas_3 p {
+        font-size: 1.5rem;
+    }
+
+    .helaas_1-grijs,
+    .helaas_2-grijs,
+    .helaas_3-grijs {
+        font-size: 4rem;
+    }
+
+    /* ------------ contract ------------ */
+    .contract_container {
+        max-width: 800px;
+    }
+
+    .contract_date,
+    .contract_date::first-letter,
+    .signature_text,
+    .signature_text::first-letter,
+    .signature_lijn,
+    .signature_lijn::first-letter,
+    .labore_vertaling,
+    .labore_vertaling::first-letter {
+        font-size: 18px;
+    }
+
+    .contract_date,
+    .contract_date::first-letter {
+        text-align: left;
+    }
+
+    .signature_img {
+        display: block;
+    }
+
+    .contract+.overlay canvas {
+        width: 50%;
+    }
+
+    /* ------------ martina ------------ */
+
+
 }
