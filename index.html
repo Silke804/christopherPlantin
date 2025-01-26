@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Christoffel Plantijn_test</title>
+  <title>Christoffel Plantijn</title>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
@@ -13,47 +13,13 @@
 <body>
   <header>
     <div class="navbar">
-      <!-- <img class="logo_nav logo" src="img/logo_nav-186.jpg" alt="logo" /> -->
       <picture class="logo_nav logo" alt="logo">
-        <source srcset="
-            /img/nav/logo_nav-150.avif 150w,
-            /img/nav/logo_nav-300.avif 300w,
-            /img/nav/logo_nav-600.avif 600w,
-            /img/nav/logo_nav-900.avif 900w,
-            /img/nav/logo_nav-1200.avif 1200w
-          " sizes="
-            (min-width: 900px) calc(6.29vw - 10px),
-            (min-width: 840px) calc(25vw - 103px),
-            (min-width: 400px) calc(16.19vw - 9px),
-            calc(20vw - 23px)
-          " type="image/avif">
-        <source srcset="
-            /img/nav/logo_nav-150.webp 150w,
-            /img/nav/logo_nav-300.webp 300w,
-            /img/nav/logo_nav-600.webp 600w,
-            /img/nav/logo_nav-900.webp 900w,
-            /img/nav/logo_nav-1200.webp 1200w
-          " sizes="
-            (min-width: 900px) calc(6.29vw - 10px),
-            (min-width: 840px) calc(25vw - 103px),
-            (min-width: 400px) calc(16.19vw - 9px),
-            calc(20vw - 23px)
-          " type="image/webp">
-        <img class="logo_nav logo" src="/img/nav/logo_nav.png" srcset="
-            /img/nav/logo_nav-150.png 150w,
-            /img/nav/logo_nav-300.png 300w,
-            /img/nav/logo_nav-600.png 600w,
-            /img/nav/logo_nav-900.png 900w,
-            /img/nav/logo_nav-1200.png 1200w
-          " sizes="
-            (min-width: 900px) calc(6.29vw - 10px),
-            (min-width: 840px) calc(25vw - 103px),
-            (min-width: 400px) calc(16.19vw - 9px),
-            calc(20vw - 23px)
-          " alt="logo">
+        <source srcset="/img/nav/logo_nav-150.avif 150w" sizes="(min-width: 900px) calc(6.29vw - 10px), (min-width: 840px) calc(25vw - 103px),
+                       (min-width: 400px) calc(16.19vw - 9px), calc(20vw - 23px)" type="image/avif">
+        <source srcset="/img/nav/logo_nav-150.webp 150w" sizes="(min-width: 900px) calc(6.29vw - 10px), (min-width: 840px) calc(25vw - 103px),
+                       (min-width: 400px) calc(16.19vw - 9px), calc(20vw - 23px)" type="image/webp">
+        <img src="/img/nav/logo_nav-150.png" class="logo_nav logo" alt="logo">
       </picture>
-
-
       <button class="button button_nav">Koop tickets</button>
       <button id="hamburger" aria-expanded="false" aria-label="Toggle navigation" class="hamburger" tabindex="0">
         <div class="bar"></div>
@@ -68,84 +34,76 @@
       </ul>
     </div>
   </header>
-
   <main>
-    <img src="drukker.webp" alt="drukker" class="drukker" />
-
-    <!-- <picture class="drukker" alt="drukker">
-      <source srcset="
-          /img/drukker/drukker-300.avif 300w,
-          /img/drukker/drukker-721.avif 721w,
-          /img/drukker/drukker-900.avif 900w,
-          /img/drukker/drukker-1080.avif 1080w,
-          /img/drukker/drukker-1240.avif 1240w,
-          /img/drukker/drukker-1500.avif 1500w,
-          /img/drukker/drukker-1720.avif 1720w,
-          /img/drukker/drukker-1920.avif 1920w,
-          /img/drukker/drukker-2048.avif 2048w
-        " sizes="100vw" type="image/avif">
-      <source srcset="
-          /img/drukker/drukker-300.webp 300w,
-          /img/drukker/drukker-721.webp 721w,
-          /img/drukker/drukker-900.webp 900w,
-          /img/drukker/drukker-1080.webp 1080w,
-          /img/drukker/drukker-1240.webp 1240w,
-          /img/drukker/drukker-1500.webp 1500w,
-          /img/drukker/drukker-1720.webp 1720w,
-          /img/drukker/drukker-1920.webp 1920w,
-          /img/drukker/drukker-2048.webp 2048w
-        " sizes="100vw" type="image/webp">
-      <img class="drukker" src="/img/drukker/drukker-300.png" srcset="
-          /img/drukker/drukker-300.png 300w,
-          /img/drukker/drukker-721.png 721w,
-          /img/drukker/drukker-900.png 900w,
-          /img/drukker/drukker-1080.png 1080w,
-          /img/drukker/drukker-1240.png 1240w,
-          /img/drukker/drukker-1500.png 1500w,
-          /img/drukker/drukker-1720.png 1720w,
-          /img/drukker/drukker-1920.png 1920w,
-          /img/drukker/drukker-2048.png 2048w
-        " sizes="100vw" alt="drukker">
-    </picture> -->
-
-
-
-
+    <picture class="drukker" alt="drukker">
+      <source srcset="/img/drukker/drukker-900.avif 900w,
+                      /img/drukker/drukker-1240.avif 1240w,
+                      /img/drukker/drukker-1500.avif 1500w,                
+                      /img/drukker/drukker-1720.avif 1720w,
+                      /img/drukker/drukker-1920.avif 1920w,
+                      /img/drukker/drukker-2048.avif 2048w" sizes="100vw" type="image/avif">
+      <source srcset="/img/drukker/drukker-900.webp 900w,
+                      /img/drukker/drukker-1240.webp 1240w,
+                      /img/drukker/drukker-1500.webp 1500w,                
+                      /img/drukker/drukker-1720.webp 1720w,
+                      /img/drukker/drukker-1920.webp 1920w,
+                      /img/drukker/drukker-2048.webp 2048w" sizes="100vw" type="image/webp">
+      <img src="/img/drukker/drukker-900.png" srcset="/img/drukker/drukker-900.png 900w,
+                /img/drukker/drukker-1240.png 1240w,
+                /img/drukker/drukker-1500.png 1500w,                
+                /img/drukker/drukker-1720.png 1720w,
+                /img/drukker/drukker-1920.png 1920w,
+                /img/drukker/drukker-2048.png 2048w" sizes="100vw" class="drukker" alt="drukker">
+    </picture>
     <section class="hero">
       <div class="hero_background">
         <div class="hero_image">
-          <img src="plantin.webp" alt="plantin" class="hero_image-url" />
-          <!-- <picture class="hero_image-url" alt="plantin">
+          <picture class="hero_image-url" alt="plantin">
             <source srcset="/img/plantin/plantin-330.avif 330w,
-  /img/plantin/plantin-794.avif 794w,
-  /img/plantin/plantin-1188.avif 1188w,
-  /img/plantin/plantin-1530.avif 1530w,
-  /img/plantin/plantin-1800.avif 1800w,
-  /img/plantin/plantin-2048.avif 2048w" type="image/avif">
+                            /img/plantin/plantin-794.avif 794w,
+                            /img/plantin/plantin-1188.avif 1188w,
+                            /img/plantin/plantin-1530.avif 1530w,
+                            /img/plantin/plantin-1800.avif 1800w,
+                            /img/plantin/plantin-2048.avif 2048w" sizes="(min-width: 900px) 60vw, 110vw"
+              type="image/avif">
             <source srcset="/img/plantin/plantin-330.webp 330w,
-  /img/plantin/plantin-794.webp 794w,
-  /img/plantin/plantin-1188.webp 1188w,
-  /img/plantin/plantin-1530.webp 1530w,
-  /img/plantin/plantin-1800.webp 1800w,
-  /img/plantin/plantin-2048.webp 2048w" type="image/webp">
-
-            <img class="hero_image-url" src="/img/plantin/plantin.png" alt="plantin">
-          </picture> -->
-
+                            /img/plantin/plantin-794.webp 794w,
+                            /img/plantin/plantin-1188.webp 1188w,
+                            /img/plantin/plantin-1530.webp 1530w,
+                            /img/plantin/plantin-1800.webp 1800w,
+                            /img/plantin/plantin-2048.webp 2048w" sizes="(min-width: 900px) 60vw, 110vw"
+              type="image/webp">
+            <img src="/img/plantin/plantin-330.png" srcset="/img/plantin/plantin-330.png 330w,
+                         /img/plantin/plantin-794.png 794w,
+                         /img/plantin/plantin-1188.png 1188w,
+                         /img/plantin/plantin-1530.png 1530w,
+                         /img/plantin/plantin-1800.png 1800w,
+                         /img/plantin/plantin-2048.png 2048w" sizes="(min-width: 900px) 60vw, 110vw"
+              class="hero_image-url" alt="plantin">
+          </picture>
         </div>
-        <img class="pijl_wie hero_toggle-1" src="pijl_2.webp" alt="Pijl">
-        <img class="pijl_wie pijl_wie-2 hero_toggle-2" src="pijl_2.webp" alt="Pijl">
+        <picture class="pijl_wie hero_toggle-1" alt="Pijl">
+          <source srcset="/img/pijl/pijl_2-222.avif 222w" sizes="(min-width: 900px) 55px, 61px" type="image/avif">
+          <source srcset="/img/pijl/pijl_2-222.webp 222w" sizes="(min-width: 900px) 55px, 61px" type="image/webp">
+          <img src="/img/pijl/pijl_2-222.png" class="pijl_wie hero_toggle-1" alt="Pijl">
+        </picture>
+        <picture class="pijl_wie pijl_wie-2 hero_toggle-2" alt="Pijl">
+          <source srcset="/img/pijl/pijl_2-222.avif 222w"
+            sizes="(min-width: 1940px) 121px, (min-width: 900px) 54px, 61px" type="image/avif">
+          <source srcset="/img/pijl/pijl_2-222.webp 222w"
+            sizes="(min-width: 1940px) 121px, (min-width: 900px) 54px, 61px" type="image/webp">
+          <img src="/img/pijl/pijl_2-222.png" class="pijl_wie pijl_wie-2 hero_toggle-2" alt="Pijl">
+        </picture>
         <p class="gold hero_wie hero_wie-1 hero_toggle-1">Wie oh<br> wie is hij?</p>
         <p class="gold hero_wie hero_wie-2 hero_toggle-2">Mijn vader !</p>
         <div class="hero_text_container">
           <h1 class="hero_title1" id="hero_title1">De reis naar<br> perfectie</h1>
           <p class="hero_text hero_text-1 hero_toggle-1" id="hero_text1">Hij was een man zoals er maar weinigen zijn.
-            Zijn
-            naam klonk door heel Europa, maar wie hij écht was, blijft een raadsel. De geur
+            Zijn naam klonk door heel Europa, maar wie hij écht was, blijft een raadsel. De geur
             van inkt, het ritme van drukpersen – daarmee bracht hij verhalen tot leven. Zijn werk liet een blijvende
             indruk achter.
             Ontdek zijn wereld in het Plantin-Moretus Museum en zie waar zijn nalatenschap begon.</p>
-          <p class=" hero_text hero_text-2 hero_toggle-2" id="hero_text2">Die man? Dat was mijn vader, Christophe
+          <p class="hero_text hero_text-2 hero_toggle-2" id="hero_text2">Die man? Dat was mijn vader, Christophe
             Plantin.
             Een man die meer zag in boeken
             dan enkel woorden.
@@ -161,26 +119,62 @@
           <div class="hero_button_container">
             <p class="ruit ruit-light hero_button_container-text">
               Scrol om <br>te ontdekken
-              <img src="pijl.webp" alt="Pijl">
+              <picture alt="Pijl">
+                <source srcset="/img/pijl/pijl-300.avif 300w" sizes="100px" type="image/avif">
+                <source srcset="/img/pijl/pijl-300.webp 300w" sizes="100px" type="image/webp">
+                <img src="/img/pijl/pijl-300.png" alt="Pijl">
+              </picture>
             </p>
           </div>
         </div>
       </div>
     </section>
     <section class="martina_container">
-      <!-- <img src="drukker.webp" alt="drukker" class="drukker" /> -->
       <div class="martina_wrapper">
-        <img src="/Martina_Plantin.webp" alt="Martina_Plantin" class="martina" />
-        <img src="/stempel.webp" alt="Martina_Plantin" class="martina_stemple" />
+        <picture class="martina" alt="Martina_Plantin">
+          <source srcset="/img/martina/Martina_Plantin-270.avif 270w,
+                          /img/martina/Martina_Plantin-540.avif 540w,
+                          /img/martina/Martina_Plantin-810.avif 810w" sizes="(min-width: 900px) 192px, 270px"
+            type="image/avif">
+          <source srcset="/img/martina/Martina_Plantin-270.webp 270w,
+                          /img/martina/Martina_Plantin-540.webp 540w,
+                          /img/martina/Martina_Plantin-810.webp 810w" sizes="(min-width: 900px) 192px, 270px"
+            type="image/webp">
+          <img src="/img/martina/Martina_Plantin-270.png" srcset="/img/martina/Martina_Plantin-270.png 270w,
+                    /img/martina/Martina_Plantin-540.png 540w,
+                    /img/martina/Martina_Plantin-810.png 810w" sizes="(min-width: 900px) 192px, 270px" class="martina"
+            alt="Martina_Plantin">
+        </picture>
+        <picture class="martina_stemple" alt="stempel" style="display: block;">
+          <source srcset="/img/stempel/stempel-360.avif 360w,
+                          /img/stempel/stempel-540.avif 540w,
+                          /img/stempel/stempel-810.avif 810w" sizes="(min-width: 900px) 120px, 147px" type="image/avif">
+          <source srcset="/img/stempel/stempel-360.webp 360w,
+                    /img/stempel/stempel-540.webp 540w,
+                    /img/stempel/stempel-810.webp 810w" sizes="(min-width: 900px) 120px, 147px" type="image/webp">
+          <img src="/img/stempel/stempel-360.png" srcset="/img/stempel/stempel-360.png 360w,
+                    /img/stempel/stempel-540.png 540w,
+                    /img/stempel/stempel-810.png 810w" sizes="(min-width: 900px) 120px, 147px" class="martina_stemple"
+            alt="stempel">
+        </picture>
       </div>
       <p class="ruit ruit-black ruit_toggle">Scrol om verder <br>te gaan
-        <img src="pijl.webp" alt="Pijl">
+        <picture alt="Pijl">
+          <source srcset="/img/pijl/pijl-300.avif 300w" sizes="100px" type="image/avif">
+          <source srcset="/img/pijl/pijl-300.webp 300w" sizes="100px" type="image/webp">
+          <img src="/img/pijl/pijl-300.png" alt="Pijl">
+        </picture>
       </p>
       <div class="martina_gold_container martina_final">
-        <img class="pijl_martina" src="pijl_2.webp" alt="Pijl">
+        <picture class="pijl_martina" alt="Pijl">
+          <source srcset="/img/pijl/pijl_2-222.avif 222w" sizes="(min-width: 900px) 6px, 7px" type="image/avif">
+          <source srcset="/img/pijl/pijl_2-222.webp 222w" sizes="(min-width: 900px) 6px, 7px" type="image/webp">
+          <img src="/img/pijl/pijl_2-222.png" class="pijl_martina" alt="Pijl">
+        </picture>
         <p class="gold martina_gold martina_gold-1">Martina Plantijn</p>
       </div>
-      <p class="martina_text martina_final">Eventjes terug – laat ik mij eerst even voorstellen. Mijn naam is Martina
+      <p class="martina_text martina_final">Eventjes terug – laat ik mij eerst even voorstellen. Mijn naam is
+        Martina
         Plantijn, de
         tweede dochter van
         Christoffel
@@ -207,10 +201,14 @@
             wees een nieuw leven beginnen.
           </p>
           <div class="pers_img">
-            <p class="ruit ruit-black ruit_pers">Probeer <br> het zelf
-              <img src="pijl.webp" alt="Pijl">
-            </p>
-            <img src="pers.webp" alt="pers" class="map_image-pers" />
+            <picture class="map_image-pers" alt="pers">
+              <source srcset="/img/map/pers-444.avif 444w, /img/map/pers-666.avif 666w"
+                sizes="(min-width: 900px) 215px, 74px" type="image/avif">
+              <source srcset="/img/map/pers-444.webp 444w, /img/map/pers-666.webp 666w"
+                sizes="(min-width: 900px) 215px, 74px" type="image/webp">
+              <img src="/img/map/pers-444.png" srcset="/img/map/pers-444.png 444w, /img/map/pers-666.png 666w"
+                sizes="(min-width: 900px) 215px, 74px" class="map_image-pers" alt="pers">
+            </picture>
           </div>
         </div>
         <div class="map_text map1545">
@@ -220,87 +218,187 @@
             vertrokken ze naar Parijs, waar mijn vader werkte bij de drukker Jean Bogard.
           </p>
           <div class="map_gold_container">
-            <img src="/moeder.webp" alt="Martina_Plantin" class="map_mama" />
+            <picture class="map_mama" alt="moeder">
+              <source srcset="/img/moeder/moeder-267.avif 267w,
+                              /img/moeder/moeder-534.avif 534w,
+                              /img/moeder/moeder-801.avif 801w" sizes="(min-width: 900px) 170px, 121px"
+                type="image/avif">
+              <source srcset="/img/moeder/moeder-267.webp 267w,
+                              /img/moeder/moeder-534.webp 534w,
+                              /img/moeder/moeder-801.webp 801w" sizes="(min-width: 900px) 170px, 121px"
+                type="image/webp">
+              <img src="/img/moeder/map-267.png" srcset="/img/moeder/moeder-267.png 267w,
+                        /img/moeder/moeder-534.png 534w,
+                        /img/moeder/moeder-801.png 801w" sizes="(min-width: 900px) 170px, 121px" class="map_mama"
+                alt="moeder">
+            </picture>
             <div class="map_gold_container-2">
-              <img class="pijl_martina pijl_map" src="pijl.webp" alt="Pijl">
+              <picture alt="Pijl" class="pijl_map pijl_mama">
+                <source srcset="/img/pijl/pijl-300.avif 300w"
+                  sizes="(min-width: 1000px) 78px, (min-width: 900px) calc(6.25vw + 17px), 9px" type="image/avif">
+                <source srcset="/img/pijl/pijl-300.webp 300w"
+                  sizes="(min-width: 1000px) 78px, (min-width: 900px) calc(6.25vw + 17px), 9px" type="image/webp">
+                <img src="/img/pijl/pijl-300.png" class="pijl_map" alt="Pijl">
+              </picture>
               <p class="gold">Mijn moeder</p>
             </div>
           </div>
         </div>
         <div class="map_text map1548">
-          <p>
+          <p class="map_text-map1548">
             Parijs bood mijn vader niet wat hij zocht. Hij wou vrijheid om zijn eigen ideeën te realiseren. Daarom
             besloten ze te
             migreren naar Antwerpen, een stad vol mogelijkheden. Tijdens deze reis werd mijn zus Margaretha geboren.
           </p>
-          <p>
+          <p class="map_text-map1548">
             Antwerpen was een stad vol belofte en mogelijkheden. We konden niet wachten om onze dromen waar te maken.
           </p>
         </div>
       </div>
       <div class="map_image">
-        <img src="map_gsm.webp" alt="map" class="map_image-url" />
-        <img src="map_gsm.webp" alt="map" class="map_image-url" />
-    </section>
-    <section class="helaas">
-      <div class="helaas_container">
-        <div class="helaas_1">
-          <h2 class="helaas_1-grijs">H</h2>
-          <p>Helaas</p>
-        </div>
-        <div class="helaas_2">
-          <h2 class="helaas_2-grijs">H</h2>
-          <p>Helaas</p>
-        </div>
-        <div class="helaas_3">
-          <h2 class="helaas_3-grijs">H</h2>
-          <p>Helaas</p>
-        </div>
+        <picture class="map_image-url map_image-gsm" alt="map">
+          <source srcset="/img/map/map_gsm-594.avif 594w,
+                          /img/map/map_gsm-870.avif 870w,
+                          /img/map/map_gsm-1080.avif 1080w,
+                          /img/map/map_gsm-1188.avif 1188w,
+                          /img/map/map_gsm-1360.avif 1360w,
+                          /img/map/map_gsm-1520.avif 1520w,
+                          /img/map/map_gsm-1650.avif 1650w,
+                          /img/map/map_gsm-1782.avif 1782w" sizes="595px" type="image/avif">
+          <source srcset="/img/map/map_gsm-594.webp 594w,
+                          /img/map/map_gsm-870.webp 870w,
+                          /img/map/map_gsm-1080.webp 1080w,
+                          /img/map/map_gsm-1188.webp 1188w,
+                          /img/map/map_gsm-1360.webp 1360w,
+                          /img/map/map_gsm-1520.webp 1520w,
+                          /img/map/map_gsm-1650.webp 1650w,
+                          /img/map/map_gsm-1782.webp 1782w" sizes="595px" type="image/webp">
+          <img src="/img/map/map_gsm-594.png" srcset="/img/map/map_gsm-594.png 594w,
+                        /img/map/map_gsm-870.png 870w,
+                        /img/map/map_gsm-1080.png 1080w,
+                        /img/map/map_gsm-1188.png 1188w,
+                        /img/map/map_gsm-1360.png 1360w,
+                        /img/map/map_gsm-1520.png 1520w,
+                        /img/map/map_gsm-1650.png 1650w,
+                        /img/map/map_gsm-1782.png 1782w" sizes="595px" class="map_image-url map_image-gsm" alt="map">
+        </picture>
+        <picture class="map_image-url map_image-desktop" alt="map">
+          <source srcset="/img/map/map_desktop-1325.avif 1325w,
+                          /img/map/map_desktop-1840.avif 1840w,
+                          /img/map/map_desktop-2048.avif 2048w" sizes="1258px" type="image/avif">
+          <source srcset="/img/map/map_desktop-1325.webp 1325w,
+                          /img/map/map_desktop-1840.webp 1840w,
+                          /img/map/map_desktop-2048.webp 2048w" sizes="1258px" type="image/webp">
+          <img src="/img/map/map_desktop-1325.png" srcset="/img/map/map_desktop-1325.png 1325w,
+                    /img/map/map_desktop-1840.png 1840w,
+                    /img/map/map_desktop-2048.png 2048w" sizes="1258px" class="map_image-url map_image-desktop"
+            alt="map">
+        </picture>
       </div>
-      <p class="helaas_text">
-        Eenmaal we aankamen in Antwerpen kon mijn vader zijn droom nog niet waarmaken. Hij werkte
-        nog even als boekbinder en handelaar in linnen. Dit was noodzakelijk om genoeg kapitaal op te bouwen. Met veel
-        geduld en hard werken is het uiteindelijk gelukt.
-      </p>
-    </section>
-    <section class="contract">
-      <p>Gelukkig moesten we niet te lang wachten. Na 2 jaar kon mijn vader officieel geregistreerd worden als poorter
-        en
-        lid van
-        het kunstnijverheidsgilde.</p>
-      <p>Ik was zo trots op mijn vader. hij kon eindelijk zijn passie voortzetten. Maar dat was niet het enige dat
-        gebeurde dit
-        jaar. dit was ook het jaar dat ik geboren was.</p>
-      <p class="ruit ruit-black">Teken het <br> contract
-        <img src="pijl.webp" alt="Pijl">
-      </p>
-      <div class="contract_container">
-        <h1 class="contract_title">Registratiecontract</h1>
-        <p class="contract_date">Datum van registratie: <strong>21 maart 1550</strong></p>
-        <div>
-          <p> Ondergetekende, <strong>Christophe Plantin</strong>, verklaart hierbij officieel geregistreerd te zijn als
-            poorter
-            van Antwerpen, trouw aan de stad en haar wetten. </p>
-        </div>
-        <div class="signature">
-
-          <div>
-            <img alt="signature" id="signature" class="signature_img" />
-            <p class="signature_text">Handtekening</p>
+      <section class="helaas">
+        <div class="helaas_container">
+          <div class="helaas_1">
+            <h2 class="helaas_1-grijs">H</h2>
+            <p>Helaas</p>
           </div>
-          <button id="openSignature" class="button">Plaats handtekening</button>
+          <div class="helaas_2">
+            <h2 class="helaas_2-grijs">H</h2>
+            <p>Helaas</p>
+          </div>
+          <div class="helaas_3">
+            <h2 class="helaas_3-grijs">H</h2>
+            <p>Helaas</p>
+          </div>
+          <p class="helaas_text">
+            Eenmaal we aankamen in Antwerpen kon mijn vader zijn droom nog niet waarmaken. Hij werkte
+            nog even als boekbinder en handelaar in linnen. Dit was noodzakelijk om genoeg kapitaal op te bouwen. Met
+            veel
+            geduld en hard werken is het uiteindelijk gelukt.
+          </p>
+        </div>
+      </section>
+    </section>
+    <picture class="rand" alt="rand">
+      <source srcset="/img/drukker/rand-1080.avif 1080w,
+                      /img/drukker/rand-1920.avif 1920w,
+                      /img/drukker/rand-2300.avif 2300w,
+                      /img/drukker/rand-3000.avif 3000w" sizes="100vw" type="image/avif">
+      <source srcset="/img/drukker/rand-1080.webp 1080w,
+                      /img/drukker/rand-1920.webp 1920w,
+                      /img/drukker/rand-2300.webp 2300w,
+                      /img/drukker/rand-3000.webp 3000w" sizes="100vw" type="image/webp">
+      <img src="/img/drukker/rand-1080.png" srcset="/img/drukker/rand-1080.png 1080w,
+                /img/drukker/rand-1920.png 1920w,
+                /img/drukker/rand-2300.png 2300w,
+                /img/drukker/rand-3000.png 3000w" sizes="100vw" class="rand" alt="rand">
+    </picture>
+    <section class="contract">
+      <div class="contract_text">
+        <p>Gelukkig moesten we niet te lang wachten. Na 2 jaar kon mijn vader officieel geregistreerd worden als poorter
+          en
+          lid van
+          het kunstnijverheidsgilde.</p>
+        <p>Ik was zo trots op mijn vader. hij kon eindelijk zijn passie voortzetten. Maar dat was niet het enige dat
+          gebeurde dit
+          jaar. dit was ook het jaar dat ik geboren was.</p>
+      </div>
+      <div class="pijl_contract">
+        <p class="ruit ruit-black ruit_contract">Teken het <br> contract
+          <picture alt="Pijl pijl_contract_img">
+            <source srcset="/img/pijl/pijl-300.avif 300w" sizes="100px" type="image/avif">
+            <source srcset="/img/pijl/pijl-300.webp 300w" sizes="100px" type="image/webp">
+            <img src="/img/pijl/pijl-300.png" alt="Pijl">
+          </picture>
+        </p>
+        <div class="contract_container">
+          <h1 class="contract_title">Registratiecontract</h1>
+          <p class="contract_date">Datum van registratie: <strong>21 maart 1550</strong></p>
+          <div>
+            <p> Ondergetekende, <strong>Christophe Plantin</strong>, verklaart hierbij officieel geregistreerd te zijn
+              als
+              poorter
+              van Antwerpen</p>
+          </div>
+          <div class="signature">
+            <img alt="signature" id="signature" class="signature_img" src=" ">
+            <p class="signature_text">Handtekening</p>
+            <button id="openSignature" class="button button_signature">Plaats handtekening</button>
+          </div>
         </div>
       </div>
     </section>
-    <div id="canvas-overlay" class="overlay">
+    <div id="canvas-overlay" class="overlay test">
       <canvas id="drawingCanvas"></canvas>
-      <button id="storeSignature" class="button">Teken</button>
-      <button id="resetSignature" class="button">Reset</button>
+      <div class="button_container">
+        <button id="storeSignature" class="button button_contract">Teken</button>
+        <button id="resetSignature" class="button button_contract">Reset</button>
+        <button id="cancelSignature" class="button button_contract">Annuleren</button>
+      </div>
     </div>
     <section class="labore">
-      <img src="labore.png" alt="labore" class="labore_img" />
-      <p class="labore_vertaling">Door standvastigheid en harde arbeid</p>
-      <p>Vijf jaar later, in 1555, richtte hij zijn levenswerk op: De Gulden Passer. Deze drukkerij markeerde het begin
+      <div class="labore_container">
+        <picture alt="labore">
+          <source srcset="/img/labore/labore-300.avif 300w,
+                          /img/labore/labore-600.avif 600w,
+                          /img/labore/labore-900.avif 900w"
+                          sizes="(min-width: 1420px) 302px, (min-width: 1240px) calc(93.75vw - 1011px), (min-width: 900px) 140px, calc(100vw - 96px)"
+                          type="image/avif">
+          <source srcset="/img/labore/labore-300.webp 300w,
+                          /img/labore/labore-600.webp 600w,
+                          /img/labore/labore-900.webp 900w"
+                          sizes="(min-width: 1420px) 302px, (min-width: 1240px) calc(93.75vw - 1011px), (min-width: 900px) 140px, calc(100vw - 96px)"
+                          type="image/webp">
+          <img src="/img/labore/labore-300.png" srcset="/img/labore/labore-300.png 300w,
+                    /img/labore/labore-600.png 600w,
+                    /img/labore/labore-900.png 900w"
+                    sizes="(min-width: 1420px) 302px, (min-width: 1240px) calc(93.75vw - 1011px), (min-width: 900px) 140px, calc(100vw - 96px)"
+                    class="lees_verhaal" alt="labore">
+        </picture>
+        <p class="labore_vertaling">Door standvastigheid en harde arbeid</p>
+      </div>
+      <p class="labore_text">Vijf jaar later, in 1555, richtte hij zijn levenswerk op: De Gulden Passer. Deze drukkerij
+        markeerde het
+        begin
         van een
         ongeëvenaarde carrière. Hier bracht hij zijn visie tot leven – boeken die niet alleen informatief waren, maar
         ook
@@ -309,23 +407,25 @@
     </section>
     <section class="perfection">
       <div class="star_container">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+        <div class="star star_1"></div>
+        <div class="star star_2"></div>
+        <div class="star star_3"></div>
       </div>
       <p class="perfection_text">Perfectie was het fundament van mijn vaders werk. Voor hem was elk boek een kunstwerk
-        dat tot in de kleinste
-        details
+        dat tot in de kleinste details
         klopte. Hij spendeerde uren aan het kiezen van het juiste lettertype, het testen van papier, en het verfijnen
         van
         lay-outs om de boodschap van de schrijver optimaal te presenteren. Geen drukproef verliet zijn werkplaats zonder
         zijn
-        goedkeuring.</p>
+        goedkeuring. Soms moest hij urenlang dezelfde beweging maken om de letters precies op hun plek te krijgen.
+      </p>
       <div class="star_container">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+        <div class="star star_4"></div>
+        <div class="star star_5"></div>
+        <div class="star star_6"></div>
       </div>
+    </section>
+    <section class="grid_container">
       <div class="random-grid">
         <span>E</span><span>e</span><span>n</span><span> </span>
         <span>b</span><span>o</span><span>e</span><span>k</span><span> </span>
@@ -345,9 +445,181 @@
         <span>v</span><span>e</span><span>r</span><span>b</span><span>i</span><span>n</span><span>d</span><span>t</span><span
           class="random_punt">.</span>
       </div>
-      <img src="wereld.png" alt="logo" class="wereld_img" />
+      <div class="perfection_interactie">
+        <p class="ruit ruit-black ruit_wereld">Scroll naar<br> beneden en boven
+          <picture class="pijl_contract_img" alt="Pijl pijl_wereld_img">
+            <source srcset="/img/pijl/pijl-300.avif 300w" sizes="65px" type="image/avif">
+            <source srcset="/img/pijl/pijl-300.webp 300w" sizes="65px" type="image/webp">
+            <img src="/img/pijl/pijl-300.png" class="pijl_contract_img" alt="Pijl">
+          </picture>
+        </p>
+        <div class="wereld">
+          <picture class="wereld_img" alt="logo">
+            <source srcset="/img/perfect/wereld-336.avif 336w, /img/perfect/wereld-576.avif 576w"
+              sizes="(min-width: 900px) 223px, 150px" type="image/avif">
+            <source srcset="/img/perfect/wereld-336.webp 336w, /img/perfect/wereld-576.webp 576w"
+              sizes="(min-width: 900px) 223px, 150px" type="image/webp">
+            <img src="/img/perfect/wereld-336.png" srcset="/img/perfect/wereld-336.png 336w,
+                      /img/perfect/wereld-576.png 576w" sizes="(min-width: 900px) 223px, 150px"
+                 alt="logo">
+          </picture>
+        </div>
+      </div>
     </section>
-    <img src="drukker.webp" alt="drukker" class="drukker" />
+    <section class="jan">
+      <picture class="drukker" alt="drukker">
+        <source srcset="/img/drukker/drukker-900.avif 900w,
+                      /img/drukker/drukker-1240.avif 1240w,
+                      /img/drukker/drukker-1500.avif 1500w,                
+                      /img/drukker/drukker-1720.avif 1720w,
+                      /img/drukker/drukker-1920.avif 1920w,
+                      /img/drukker/drukker-2048.avif 2048w" sizes="100vw" type="image/avif">
+        <source srcset="/img/drukker/drukker-900.webp 900w,
+                      /img/drukker/drukker-1240.webp 1240w,
+                      /img/drukker/drukker-1500.webp 1500w,                
+                      /img/drukker/drukker-1720.webp 1720w,
+                      /img/drukker/drukker-1920.webp 1920w,
+                      /img/drukker/drukker-2048.webp 2048w" sizes="100vw" type="image/webp">
+        <img src="/img/drukker/drukker-900.png" srcset="/img/drukker/drukker-900.png 900w,
+                  /img/drukker/drukker-1240.png 1240w,
+                  /img/drukker/drukker-1500.png 1500w,                
+                  /img/drukker/drukker-1720.png 1720w,
+                  /img/drukker/drukker-1920.png 1920w,
+                  /img/drukker/drukker-2048.png 2048w" sizes="100vw"
+              class="drukker" alt="drukker">
+      </picture>
+      <div class="jan_container">
+        <picture class="jan_img jan_img_1" alt="martina">
+          <source srcset="/img/jan/jan-486.avif 486w,
+                          /img/jan/jan-630.avif 630w,
+                          /img/jan/jan-890.avif 890w,
+                          /img/jan/jan-1090.avif 1090w,
+                          /img/jan/jan-1260.avif 1260w" sizes="(min-width: 900px) 14.71vw,40.34vw" type="image/avif">
+          <source srcset="/img/jan/jan-486.webp 486w, 
+                          /img/jan/jan-630.webp 630w,
+                          /img/jan/jan-890.webp 890w,
+                          /img/jan/jan-1090.webp 1090w,
+                          /img/jan/jan-1260.webp 1260w" sizes="(min-width: 900px) 14.71vw,40.34vw" type="image/webp">
+          <img src="/img/jan/jan-486.png" srcset="/img/jan/jan-486.png 486w,
+                    /img/jan/jan-630.png 630w,
+                    /img/jan/jan-890.png 890w,
+                    /img/jan/jan-1090.png 1090w,
+                    /img/jan/jan-1260.png 1260w" sizes="(min-width: 900px) 14.71vw,40.34vw" class="jan_img jan_img_1"
+            alt="martina">
+        </picture>
+        <picture class="jan_img jan_img-2" alt="martina">
+          <source srcset="/img/martina/martina-486.avif 486w,
+                          /img/martina/martina-630.avif 630w,
+                          /img/martina/martina-890.avif 890w,
+                          /img/martina/martina-1090.avif 1090w,
+                          /img/martina/martina-1260.avif 1260w" sizes="(min-width: 900px) 14.71vw, 40.34vw"
+            type="image/avif">
+          <source srcset="/img/martina/martina-486.webp 486w,
+                          /img/martina/martina-630.webp 630w,
+                          /img/martina/martina-890.webp 890w,
+                          /img/martina/martina-1090.webp 1090w,
+                          /img/martina/martina-1260.webp 1260w" sizes="(min-width: 900px) 14.71vw, 40.34vw"
+            type="image/webp">
+          <img src="/img/martina/martina-486.png" srcset="/img/martina/martina-486.png 486w,
+                	       /img/martina/martina-630.png 630w,
+                	       /img/martina/martina-890.png 890w,
+                	       /img/martina/martina-1090.png 1090w,
+                	       /img/martina/martina-1260.png 1260w" sizes="(min-width: 900px) 14.71vw,40.34vw"
+            class="jan_img jan_img-2" alt="martina">
+        </picture>
+        <p class="jan_text">Mijn vader accepteerde de risico’s van zijn streven, zelfs als die levensgevaarlijk waren.
+          Hij drukte soms
+          boeken die
+          controversieel of verboden waren, goed wetend dat ze zijn hoofd konden kosten. Toch geloofde hij dat het
+          najagen
+          van
+          perfectie en waarheid de enige manier was om een blijvende impact te maken.</p>
+      </div>
+      <div class="lees_ook">
+        <h2 class="lees_titel">Lees ook</h2>
+        <p class="lees_text">Maar als je meer wil weten over mijn vader en hoe het verder liep kan je meer ontdekken in
+          het
+          Plantin-Moretus Museum.
+          Of lees je het vervolg.</p>
+        <button class="button button_lees">Koop je tickets</button>
+        <div class="lees_container">
+          <div class="lees_item">
+            <div class="overlay_text">
+              <p>25 januari</p>
+            </div>
+            <picture class="lees_verhaal" alt="martina">
+              <source srcset="/img/letters/letters-300.avif 300w,
+                              /img/letters/letters-600.avif 600w,
+                              /img/letters/letters-900.avif 900w" sizes="300px" type="image/avif">
+              <source srcset="/img/letters/letters-300.webp 300w,
+                              /img/letters/letters-600.webp 600w,
+                              /img/letters/letters-900.webp 900w" sizes="300px" type="image/webp">
+              <img src="/img/letters/letters-300.png" srcset="/img/letters/letters-300.png 300w,
+                        /img/letters/letters-600.png 600w,
+                        /img/letters/letters-900.png 900w" sizes="300px" class="lees_verhaal" alt="martina">
+            </picture>
+            <p>Plantin’s laatste droom</p>
+          </div>
+          <div class="lees_item">
+            <div class="overlay_text">
+              <p>1 februari</p>
+            </div>
+            <picture class="lees_verhaal" alt="martina">
+              <source srcset="/img/nav/logo-300.avif 300w,
+                              /img/nav/logo-600.avif 600w,
+                              /img/nav/logo-900.avif 900w" sizes="300px" type="image/avif">
+              <source srcset="/img/nav/logo-300.webp 300w,
+                              /img/nav/logo-600.webp 600w,
+                              /img/nav/logo-900.webp 900w" sizes="300px" type="image/webp">
+              <img src="/img/nav/logo-300.png" srcset="/img/nav/logo-300.png 300w,
+                        /img/nav/logo-600.png 600w,
+                        /img/nav/logo-900.png 900w" sizes="300px" class="lees_verhaal" alt="martina">
+            </picture>
+            <p>Het geheim van de gulden passer</p>
+          </div>
+          <div class="lees_item ">
+            <div class="overlay_text">
+              <p>8 februari</p>
+            </div>
+            <picture alt="labore">
+              <source srcset="/img/labore/labore-300.avif 300w,
+                              /img/labore/labore-600.avif 600w,
+                              /img/labore/labore-900.avif 900w"
+                sizes="(min-width: 1420px) 300px, (min-width: 1240px) calc(92.5vw - 995px), (min-width: 900px) 140px, (min-width: 420px) 300px, calc(96vw - 84px)"
+                type="image/avif">
+              <source srcset="/img/labore/labore-300.webp 300w,
+                              /img/labore/labore-600.webp 600w,
+                              /img/labore/labore-900.webp 900w"
+                sizes="(min-width: 1420px) 300px, (min-width: 1240px) calc(92.5vw - 995px), (min-width: 900px) 140px, (min-width: 420px) 300px, calc(96vw - 84px)"
+                type="image/webp">
+              <img src="/img/labore/labore-300.png" srcset="/img/labore/labore-300.png 300w,
+                        /img/labore/labore-600.png 600w,
+                        /img/labore/labore-900.png 900w"
+                sizes="(min-width: 1420px) 300px, (min-width: 1240px) calc(92.5vw - 995px), (min-width: 900px) 140px, (min-width: 420px) 300px, calc(96vw - 84px)"
+                class="lees_verhaal" alt="labore">
+            </picture>
+            <p>De trouw van een partner</p>
+          </div>
+          <div class="lees_item">
+            <div class="overlay_text">
+              <p>15 februari</p>
+            </div>
+            <picture class="lees_verhaal" alt="pers verhaal">
+              <source srcset="/img/pers/pers_verhaal-300.avif 300w,
+                              /img/pers/pers_verhaal-600.avif 600w,
+                              /img/pers/pers_verhaal-900.avif 900w" sizes="300px" type="image/avif">
+              <source srcset="/img/pers/pers_verhaal-300.webp 300w,
+                              /img/pers/pers_verhaal-600.webp 600w,
+                              /img/pers/pers_verhaal-900.webp 900w" sizes="300px" type="image/webp">
+              <img src="/img/pers/pers_verhaal-300.png" srcset="/img/pers/pers_verhaal-300.png 300w,
+                        /img/pers/pers_verhaal-600.png 600w,
+                        /img/pers/pers_verhaal-900.png 900w" sizes="300px" class="lees_verhaal" alt="pers verhaal">
+            </picture>
+            <p>Het ritme van de pers</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <script type="module" src="/src/main.js"></script>
 </body>
