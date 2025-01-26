@@ -787,6 +787,7 @@ source {
 
 .labore_container {
     margin-left: 3rem;
+    z-index: -1;
 }
 
 .labore_img {
