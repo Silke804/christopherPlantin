@@ -745,7 +745,7 @@ source {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
     margin-top: 1rem;
 }
 
@@ -1350,6 +1350,10 @@ source {
     .labore_vertaling,
     .labore_vertaling::first-letter {
         font-size: 18px;
+    }
+
+    .button_container {
+        gap: 4rem;
     }
 
     .contract_container {
