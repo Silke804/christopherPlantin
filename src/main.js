@@ -1,6 +1,5 @@
 import './style.css'
 
-function init() {
 
 function init() {
     gsap.registerPlugin(ScrollTrigger);
