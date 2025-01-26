@@ -1,4 +1,3 @@
-/* dvh ipv vh --> zorgt dat de zoekbalk in safari ni meegerekend wordt  */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @font-face {
@@ -27,10 +26,6 @@
 body {
     background-color: var(--c-beige);
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-bottom: 50rem;
     margin-top: -0.5rem;
 }
 
@@ -45,7 +40,8 @@ strong {
 }
 
 p::first-letter,
-h1::first-letter {
+h1::first-letter,
+.lees_titel::first-letter {
     color: var(--c-red);
     font-size: var(--fs-l);
     font-family: 'Dancing Script';
@@ -109,7 +105,7 @@ a {
 header {
     color: var(--c-black);
     padding: 1rem 1rem;
-    background-image: url('/rand.webp');
+    background-image: url('/img/drukker/rand.webp');
     background-repeat: repeat-x;
     background-size: contain;
     background-position: center center;
@@ -218,7 +214,6 @@ body.no-scroll {
         transform: translateX(-20%);
     }
 
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -228,7 +223,7 @@ body.no-scroll {
 /* ----------------- hero ----------------- */
 
 .hero_background {
-    background-image: url('/drukker_2.webp');
+    background-image: url('/img/drukker/drukker_2.webp');
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -257,7 +252,8 @@ body.no-scroll {
     align-self: end;
 }
 
-.hero_image-url {
+.hero_image-url>img,
+source {
     width: calc(100% * 2);
     height: auto;
     margin-top: 2rem;
@@ -309,11 +305,11 @@ body.no-scroll {
 
 .pijl_wie {
     position: absolute;
-    top: 26%;
+    top: 30%;
     left: 12%;
     margin: 0;
-    transform: rotate(45deg);
-    width: 15%;
+    transform: rotate(30deg);
+    width: 45%;
 }
 
 .ruit-black,
@@ -357,7 +353,7 @@ body.no-scroll {
     transform: translate(-50%, -50%);
     width: 100px;
     height: auto;
-    z-index: 1;
+    z-index: -1;
 }
 
 @keyframes smooth-rotation {
@@ -378,7 +374,7 @@ body.no-scroll {
 
 .martina_wrapper {
     grid-row: 1;
-    margin-top: 5rem;
+    margin-top: -1rem;
     justify-content: center;
 }
 
@@ -388,15 +384,19 @@ body.no-scroll {
     justify-self: center;
 }
 
+.ruit_toggle {
+    margin-left: 6rem;
+}
+
 .martina_stemple {
     grid-row: 2;
     grid-column: 1;
     position: absolute;
     top: 80%;
-    left: 70%;
+    left: 60%;
     transform: translate(-50%, -50%) rotate(10deg);
     z-index: 1;
-    width: 40%;
+    width: 70%;
     object-fit: contain;
 }
 
@@ -412,9 +412,9 @@ body.no-scroll {
 }
 
 .pijl_martina {
-    width: 20%;
+    width: 25%;
     height: 100%;
-    transform: rotate(-180deg);
+    transform: rotate(-80deg);
     margin-left: 1rem;
 }
 
@@ -442,10 +442,11 @@ body.no-scroll {
     grid-template-rows: 17% auto;
     height: 100vh;
     margin-top: 20rem;
+    overflow: hidden;
 }
 
 .map_year {
-    background: url('rand.webp');
+    background: url('/img/drukker/rand.webp');
     background-repeat: repeat-x;
     display: flex;
     justify-content: center;
@@ -454,11 +455,6 @@ body.no-scroll {
     font-size: var(--fs-xxl);
     color: var(--c-beige);
     margin-right: -1rem;
-
-}
-
-.map_year-text {
-    display: none;
 }
 
 .map_text {
@@ -482,11 +478,12 @@ body.no-scroll {
 
 .map_year-text,
 .map_text {
-    display: none;
+    display: block;
     opacity: 0;
 }
 
-.map_image-pers {
+.map_image-pers>img,
+source {
     margin-top: 2rem;
     width: 40%;
 }
@@ -500,9 +497,8 @@ body.no-scroll {
     grid-row: 2;
     z-index: -1;
     position: absolute;
-    width: 210%;
-    height: 20%;
-    width: 100%;
+    width: 180%;
+    margin-left: 2rem;
     height: 100vh;
     overflow: hidden;
 }
@@ -518,12 +514,12 @@ body.no-scroll {
 }
 
 .map_mama {
-    width: 60%;
+    width: 90%;
 }
 
 .pijl_map {
-    width: 20%;
-    transform: rotate(-180deg);
+    width: 30%;
+    transform: rotate(210deg);
     margin-left: 2rem;
 }
 
@@ -540,22 +536,30 @@ body.no-scroll {
 }
 
 .map_gold_container-2 {
-    display: flex;
-    flex-direction: column;
+    width: 20%;
+    margin-left: 2rem;
+}
+
+.pijl_mama {
+    transform: rotate(180deg);
 }
 
 .map_image-url {
-    width: 200%;
+    width: 110%;
     height: auto;
     object-fit: cover;
     object-position: top left;
 }
 
+.map_image-desktop {
+    display: none;
+}
+
 /* ------------------ helaas ------------------ */
 .helaas {
-    background-color: var(--c-black);
     height: 100vh;
     padding-top: 10rem;
+    position: absolute;
 }
 
 .helaas_container {
@@ -571,14 +575,17 @@ body.no-scroll {
 .helaas_1 {
     grid-column: 1;
     grid-row: 1;
+    justify-self: center;
 }
 
 .helaas_2 {
+    justify-self: center;
     grid-column: 2;
     grid-row: 2;
 }
 
 .helaas_3 {
+    justify-self: center;
     grid-column: 3;
     grid-row: 3;
 }
@@ -604,16 +611,16 @@ body.no-scroll {
     margin: 0;
 }
 
-.helaas_1 p,
-.helaas_1 p::first-letter {
-    font-size: 1.5rem;
-}
-
 .helaas_1-grijs,
 .helaas_2-grijs,
 .helaas_3-grijs {
     margin: 0;
     transform: translate(-50%, -20%);
+}
+
+.helaas_1 p,
+.helaas_1 p::first-letter {
+    font-size: 1.5rem;
 }
 
 .helaas_1-grijs {
@@ -640,12 +647,22 @@ body.no-scroll {
 
 .helaas_text {
     color: var(--c-beige);
-    margin: 0rem 1.5rem;
+    margin: 5rem 1.5rem -3rem;
+    grid-row: 4;
+    grid-column: 1/4;
 }
 
 /* ------------contract------------ */
 .contract {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 5rem 1.5rem;
+}
+
+.pijl_contract {
+    text-align: center;
 }
 
 .contract_container {
@@ -685,24 +702,51 @@ body.no-scroll {
     text-align: center;
 }
 
-.signature_container {
-    display: flex;
-}
-
 .signature_text {
     margin: 0.5rem 0rem 1rem;
 }
 
-.signature_img {
-    flex: 1;
-    display: none;
-    width: 20%;
+.signature {
+    display: grid;
+    border-top: none;
+    border-bottom: none;
 }
 
-.signature {
-    margin-top: 4rem;
-    display: grid;
+.signature>*:nth-child(2) {
     border-top: 1px solid var(--c-black);
+}
+
+.signature img {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    display: none;
+    grid-row: 1;
+    display: none;
+    width: 30%;
+    grid-row: 1;
+    justify-self: center;
+}
+
+.signature_container {
+    grid-row: 1;
+}
+
+.signature_text {
+    grid-row: 2;
+}
+
+.button_signature {
+    grid-row: 3;
+    justify-self: center;
+    align-self: center;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 1rem;
 }
 
 .contract+.overlay canvas {
@@ -712,6 +756,9 @@ body.no-scroll {
     background-color: #f4f4f4;
     width: 75%;
     height: 80%;
+    justify-self: center;
+    justify-content: center;
+    justify-items: center;
 }
 
 .contract+.overlay {
@@ -725,22 +772,35 @@ body.no-scroll {
     display: none;
 }
 
+.button_contract {
+    background-color: var(--c-beige);
+}
+
 /* ------------ labore ------------ */
 .labore {
     display: flex;
     flex-direction: column;
-    padding: 5rem 1.5rem;
-    align-items: center;
+    margin: 5rem 1.5rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.labore_container {
+    margin-left: 3rem;
 }
 
 .labore_img {
     width: 70%;
-    border-radius: 100px 100px 0 0;
-    margin-bottom: 0rem;
+    margin-bottom: -1.1rem;
 }
 
 .labore_vertaling {
     margin-bottom: 2rem;
+}
+
+.labore_text {
+    justify-self: center;
+    align-self: center;
 }
 
 /* ------- perfect ------ */
@@ -767,20 +827,26 @@ body.no-scroll {
 }
 
 .perfection_text {
-    margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+    margin: 1.5rem;
 }
 
 .random-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(var(--perfection-columns), 1fr);
-    grid-template-rows: repeat(var(--perfection-rows), 1fr);
+    grid-template-columns: repeat(var(--perfection-columns), 6%);
+    grid-template-rows: repeat(var(--perfection-rows), 10%);
     font-size: var(--fs-xxl);
-    width: 80vw;
-    /* height: 50vh; */
+    width: 100%;
+    justify-content: center;
     position: relative;
     margin: auto;
-    margin-top: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.readable {
+    padding: 3rem;
+    display: block;
 }
 
 .random-grid span {
@@ -792,10 +858,175 @@ body.no-scroll {
     display: none;
 }
 
+/* ---------------werled ----------------- */
+.wereld {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 10rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
 .wereld_img {
-    width: 60%;
-    justify-self: center;
+    width: 50%;
+}
+
+.ruit_wereld {
+    position: absolute;
+}
+
+.grid_container {
+    display: grid;
+    flex-direction: column;
+}
+
+.perfection_interactie {
+    display: flex;
+    flex-direction: column;
+}
+
+.ruit_wereld {
+    top: -40%;
+    left: 10%;
+}
+
+.ruit_wereld img {
+    width: 50%;
+    top: 170%;
+}
+
+/* ------------ jan ------------ */
+.jan {
+    background-image: url('/img/drukker/drukker_2.webp');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.jan_img {
+    width: 90%;
+    margin-top: 10rem;
+}
+
+.jan_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 3rem 0rem;
+}
+
+.jan_text {
+    color: var(--c-beige);
+    grid-column: 1/4;
+    padding: 0rem 1.5rem;
+    background-color: var(--c-black);
+}
+
+.lees_titel::first-letter {
+    font-size: var(--fs-xxl);
+}
+
+.lees_verhaal {
+    width: 100%;
+    height: auto;
+}
+
+.lees_titel {
+    color: var(--c-beige);
     margin-top: 5rem;
+}
+
+.lees_ook {
+    background-color: var(--c-black);
+    text-align: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 0rem;
+    font-size: var(--fs-m);
+    color: var(--c-black);
+    padding-bottom: 10rem;
+    margin-top: -2rem;
+    z-index: -1;
+}
+
+.lees_container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.lees_container::-webkit-scrollbar {
+    display: none;
+}
+
+.lees_container p {
+    color: var(--c-beige);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.lees_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    max-width: 300px;
+}
+
+.lees_text {
+    color: var(--c-beige);
+    margin: 2rem 1.5rem;
+
+}
+
+.button_lees {
+    margin-bottom: 5rem;
+}
+
+.lees_item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay_text p {
+    color: var(--c-gold);
+    margin-bottom: 0.5rem;
+}
+
+.overlay_text p::first-letter {
+    color: var(--c-gold);
+    font-size: 1.5rem;
+    font-family: "plantin";
+
+}
+
+.overlay_text {
+    background-color: var(--c-black);
+    padding: 0.7rem 2rem;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    z-index: 10;
 }
 
 /* ---------------------- media queries ---------------------- */
@@ -884,9 +1115,9 @@ body.no-scroll {
     }
 
     .pijl_wie {
-        top: 34%;
-        left: 58%;
-        width: 8%;
+        top: 32%;
+        left: 48%;
+        width: 25%;
     }
 
     .pijl_wie-2 {
@@ -914,11 +1145,6 @@ body.no-scroll {
         width: 100%;
     }
 
-    .martina_container {
-        gap: 0;
-        display: flex;
-    }
-
     .ruit_toggle {
         margin-right: 10rem;
     }
@@ -932,12 +1158,13 @@ body.no-scroll {
         margin: 0rem;
         margin-top: -10rem;
         width: 80%;
-        /* margin-top: -30rem; */
+        height: 100%;
     }
 
     .martina_wrapper {
         align-self: center;
-        margin: 0;
+        height: 100%;
+        width: 30%;
     }
 
     .pijl_martina {
@@ -952,9 +1179,15 @@ body.no-scroll {
         margin-top: 2rem;
     }
 
+    .martina_gold_container {
+        margin-right: 5rem;
+        gap: 4rem;
+    }
+
     .martina_stemple {
-        width: 25%;
+        width: 75%;
         left: 70%;
+        top: 85%;
     }
 
     .martina_text {
@@ -963,10 +1196,7 @@ body.no-scroll {
         align-self: center;
         display: none;
         margin-left: 12rem;
-    }
-
-    .martina {
-        width: 50%;
+        max-width: 35rem;
     }
 
     /* ------------ map ------------ */
@@ -975,33 +1205,71 @@ body.no-scroll {
         grid-template-columns: 10% 90%;
         grid-template-rows: 100%;
         height: 100vh;
-        /* position: relative; */
+    }
+
+    .map_content {
+        margin-left: 5rem;
     }
 
     .map_year {
         transform: rotate(-90deg);
-        /* position: absolute; */
-        text-orientation: mixed;
-        /* Zorgt voor nette tekstweergave */
-        /* width: 100vw; */
         grid-row: 1;
         grid-column: 1;
         align-self: center;
-    }
-
-    .map_year-text {
-        /* padding: 50rem; */
+        justify-self: center;
+        width: 100vh;
+        font-size: var(--fs-xxl);
     }
 
     .map_text {
         grid-column: 1;
+        margin-top: 10rem;
+        max-width: 35rem;
     }
 
     .map_image {
         grid-column: 2;
         grid-row: 1;
-        width: 40%;
+        width: 80%;
         justify-self: end;
+    }
+
+    .map_image-desktop {
+        display: block;
+    }
+
+    .map_image-gsm {
+        display: none;
+    }
+
+    .map_image-url {
+        width: 140%;
+    }
+
+    .map_mama {
+        width: 90%;
+    }
+
+    .map_gold_container {
+        flex-direction: row;
+    }
+
+    .map_gold_container-2 {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .pijl_map {
+        width: 95%;
+        transform: rotate(-130deg);
+    }
+
+    .rand {
+        position: absolute;
+        margin-top: -17rem;
+        z-index: -1;
     }
 
     /* ------------ helaas ------------ */
@@ -1009,25 +1277,65 @@ body.no-scroll {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .helaas_1 h2,
-    .helaas_2 h2,
-    .helaas_3 h2 {
-        font-size: 2rem;
+    .helaas_1 p,
+    .helaas_1 p::first-letter {
+        font-size: 3rem;
     }
 
-    .helaas_1 p,
+    .helaas_1-grijs {
+        font-size: 6rem;
+    }
+
     .helaas_2 p,
-    .helaas_3 p {
-        font-size: 1.5rem;
+    .helaas_2 p::first-letter {
+        font-size: 5rem;
+    }
+
+    .helaas_2-grijs {
+        font-size: 8rem;
+    }
+
+    .helaas_3 p,
+    .helaas_3 p::first-letter {
+        font-size: 7rem;
+    }
+
+    .helaas_3-grijs {
+        font-size: 10rem;
     }
 
     .helaas_1-grijs,
     .helaas_2-grijs,
     .helaas_3-grijs {
-        font-size: 4rem;
+        transform: translate(-40%, -15%);
+    }
+
+    .helaas_text {
+        grid-column: 1/3;
+        padding-right: 15rem;
     }
 
     /* ------------ contract ------------ */
+    .contract {
+        flex-direction: row;
+        margin: 10rem 10rem 0rem;
+        gap: 5rem;
+    }
+
+    .pijl_contract {
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .ruit_contract img {
+        top: 57%;
+        left: 150%;
+        transform: translate(-50%, -50%) rotate(-80deg);
+    }
+
     .contract_container {
         max-width: 800px;
     }
@@ -1043,20 +1351,111 @@ body.no-scroll {
         font-size: 18px;
     }
 
-    .contract_date,
-    .contract_date::first-letter {
-        text-align: left;
+    .contract_container {
+        border-radius: 20px;
     }
 
     .signature_img {
         display: block;
+        width: 60%;
     }
 
     .contract+.overlay canvas {
-        width: 50%;
+        width: 80%;
     }
 
-    /* ------------ martina ------------ */
+    /* ------------------ labore ------------------  */
+    .labore {
+        flex-direction: row;
+        margin: 5rem 10rem;
+        gap: 5rem;
+    }
 
+    .labore_img {
+        width: 90%;
+        margin-bottom: -2rem;
+    }
 
+    .labore_text {
+        max-width: 40rem;
+    }
+
+    .labore_vertaling {
+        margin-bottom: 2rem;
+        margin-left: 1.7rem;
+    }
+
+    /* -------------- perfection --------------  */
+    .perfection {
+        display: flex;
+        margin: 0rem 5rem;
+        gap: 5rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .star_container {
+        gap: 4rem;
+    }
+
+    .cloned-letter {
+        font-size: 1.4rem;
+    }
+
+    .grid_container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+    }
+
+    .ruit_wereld {
+        top: 5%;
+        left: 5%;
+    }
+
+    .jan {
+        background-image: none;
+    }
+
+    .jan_img {
+        width: 70%;
+        margin-top: 0rem;
+    }
+
+    .jan_container {
+        grid-template-columns: 30% 40% 30%;
+        margin-right: 10rem;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .jan_img-2 {
+        grid-column: 3;
+    }
+
+    .jan_text {
+        color: var(--c-black);
+        grid-column: 2;
+        grid-row: 1;
+        background-color: var(--c-beige);
+    }
+
+    /* ----------- lees ook ------------- */
+    .lees_ook {
+        color: var(--c-beige);
+        margin-top: 10rem;
+    }
+
+    .lees_container {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .lees_container {
+        gap: 5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 }
